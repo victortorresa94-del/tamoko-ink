@@ -388,6 +388,34 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
 .style-card.feat{grid-column:span 2}
 @media (max-width:900px){ .style-card.feat{grid-column:span 2} }
 @media (max-width:620px){ .style-card.feat{grid-column:span 1} }
+
+/* ============================================================
+   GALERÍA — masonry
+   ============================================================ */
+.galeria{background:linear-gradient(180deg,var(--black),var(--black-soft))}
+.masonry{columns:3;column-gap:20px}
+@media (max-width:900px){ .masonry{columns:2} }
+@media (max-width:560px){ .masonry{columns:1} }
+.tile{
+  position:relative;break-inside:avoid;margin-bottom:20px;border-radius:16px;
+  overflow:hidden;border:1px solid var(--line);
+}
+.tile svg{width:100%;height:auto;display:block;transition:transform .9s var(--ease)}
+.tile:hover svg{transform:scale(1.07)}
+.tile .cap{
+  position:absolute;inset:auto 0 0 0;padding:46px 22px 18px;
+  background:linear-gradient(transparent,rgba(8,8,8,.9));
+  opacity:0;transform:translateY(14px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.tile:hover .cap{opacity:1;transform:none}
+.tile .cap b{display:block;font-family:"Playfair Display",serif;font-size:1.1rem;font-weight:700}
+.tile .cap span{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tile::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);
+  opacity:0;transition:opacity .5s var(--ease);z-index:1;pointer-events:none}
+.tile:hover::before{opacity:1}
+.gal-foot{margin-top:48px;text-align:center;color:var(--muted);font-size:.95rem}
+.gal-foot a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.4)}
 </style>
 </head>
 <body>
@@ -690,6 +718,121 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
         </span>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============== GALERÍA ============== -->
+<section class="section galeria" id="galeria">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ngā mahi · El trabajo</span>
+      <h2>Cada pieza, una historia que camina</h2>
+      <p>Una selección del trabajo del estudio. Por respeto a la privacidad de cada cliente, las piezas se representan de forma artística.</p>
+    </div>
+
+    <div class="masonry">
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a33"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs>
+          <rect width="400" height="520" fill="url(#g1)"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round" opacity=".8">
+            <path d="M200 470 q-130 -16 -140 -180 q-8 -130 130 -150 q110 -16 122 96 q8 80 -72 92 q-60 8 -66 -52 q-3 -36 34 -42"/>
+            <path d="M200 470 q130 -16 140 -180" opacity=".4"/>
+          </g>
+          <circle cx="200" cy="290" r="5" fill="#c9a84c"/>
+        </svg>
+        <figcaption class="cap"><span>Ta moko · Pectoral</span><b>Te Manawa</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="360" fill="#1a1407"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="2.6" stroke-linecap="round" opacity=".8">
+            <path d="M30 60 L120 180 L30 300"/><path d="M130 60 L220 180 L130 300"/>
+            <path d="M230 60 L320 180 L230 300"/><path d="M330 60 L380 130"/>
+          </g>
+        </svg>
+        <figcaption class="cap"><span>Mangōpare · Antebrazo</span><b>Kaha</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="g3" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#2d5a4e"/><stop offset="1" stop-color="#0a0a0a"/></radialGradient></defs>
+          <rect width="400" height="440" fill="url(#g3)"/>
+          <g fill="none" stroke="#e3c879" stroke-width="2.2" stroke-linecap="round">
+            <path d="M200 380 q-110 -14 -118 -150 q-8 -100 110 -116 q88 -10 96 76 q5 64 -56 72 q-50 6 -54 -42"/>
+            <circle cx="200" cy="244" r="6"/>
+          </g>
+        </svg>
+        <figcaption class="cap"><span>Koru · Hombro</span><b>Tipuranga</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#13231f"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round" opacity=".75">
+            <path d="M0 90 q100 -64 200 0 q100 64 200 0"/>
+            <path d="M0 160 q100 -64 200 0 q100 64 200 0"/>
+            <path d="M0 230 q100 -64 200 0 q100 64 200 0"/>
+          </g>
+          <g fill="#c9a84c" opacity=".6"><circle cx="100" cy="124" r="4"/><circle cx="300" cy="124" r="4"/></g>
+        </svg>
+        <figcaption class="cap"><span>Kōwhaiwhai · Banda</span><b>Whakapapa</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2410"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs>
+          <rect width="400" height="500" fill="url(#g5)"/>
+          <g fill="none" stroke="#e3c879" stroke-width="2.4" stroke-linecap="round" opacity=".85">
+            <path d="M150 120 q-50 30 -34 100 q12 50 64 40 q40 -8 30 -50 q-8 -30 -40 -22"/>
+            <path d="M250 120 q50 30 34 100 q-12 50 -64 40 q-40 -8 -30 -50 q8 -30 40 -22"/>
+            <path d="M200 230 q-34 40 -10 110 q16 46 12 130"/>
+            <path d="M200 230 q34 40 10 110 q-16 46 -12 130"/>
+          </g>
+          <g fill="#e3c879"><circle cx="150" cy="120" r="4"/><circle cx="250" cy="120" r="4"/></g>
+        </svg>
+        <figcaption class="cap"><span>Ta moko · Rostro</span><b>Mataora</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="380" fill="#0d1714"/>
+          <g fill="none" stroke="#3f7d6c" stroke-width="2.6" stroke-linecap="round">
+            <path d="M70 320 q-50 -90 30 -150 q70 -52 150 -10 q70 38 50 120"/>
+            <path d="M200 60 q90 30 100 130 q8 80 -70 100"/>
+          </g>
+          <circle cx="200" cy="200" r="6" fill="#3f7d6c"/>
+        </svg>
+        <figcaption class="cap"><span>Kirituhi · Pierna</span><b>Ara</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f3a33"/><stop offset="1" stop-color="#1a1407"/></linearGradient></defs>
+          <rect width="400" height="340" fill="url(#g7)"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round" opacity=".8">
+            <path d="M40 280 q-20 -120 90 -150 q90 -24 130 60"/>
+            <path d="M360 60 q20 120 -90 150 q-90 24 -130 -60"/>
+          </g>
+        </svg>
+        <figcaption class="cap"><span>Kirituhi · Espalda</span><b>Moana</b></figcaption>
+      </figure>
+
+      <figure class="tile reveal" data-cursor>
+        <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="460" fill="#161616"/>
+          <g fill="none" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round" opacity=".8">
+            <path d="M200 420 q-120 -16 -130 -170 q-8 -120 124 -138 q100 -14 110 88 q7 74 -66 84 q-56 8 -60 -48"/>
+            <path d="M120 100 L160 70 L200 100 L240 70 L280 100"/>
+          </g>
+          <circle cx="200" cy="262" r="5" fill="#c9a84c"/>
+        </svg>
+        <figcaption class="cap"><span>Ta moko · Brazo completo</span><b>Toa</b></figcaption>
+      </figure>
+    </div>
+
+    <p class="gal-foot reveal">¿Quieres ver más trabajo en persona? <a href="#reservas" data-cursor>Pide una visita al estudio</a>.</p>
   </div>
 </section>
 
