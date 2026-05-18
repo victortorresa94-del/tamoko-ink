@@ -428,33 +428,79 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
              radial-gradient(90% 80% at 12% 90%,rgba(201,168,76,.14),transparent 55%),
              var(--black);
 }
-.hero-bg{position:absolute;inset:0;z-index:0;opacity:.5;will-change:transform}
+/* hero parallax layers */
+.hero-layers{position:absolute;inset:0;z-index:0;pointer-events:none}
+.h-layer{position:absolute;inset:-8% -4%;will-change:transform}
+.h-layer svg{width:100%;height:100%}
+.hero-bg{position:absolute;inset:0;z-index:0;opacity:.42;will-change:transform}
 .hero-bg svg{width:100%;height:100%}
 .hero-grain{
   position:absolute;inset:-50%;z-index:1;opacity:.05;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .hero-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:radial-gradient(120% 120% at 50% 40%,transparent 50%,rgba(0,0,0,.55) 100%)}
+  background:radial-gradient(120% 120% at 50% 40%,transparent 48%,rgba(0,0,0,.62) 100%)}
+
+/* floating gold particles */
+.hero-particles{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.hero-particles i{
+  position:absolute;display:block;width:5px;height:5px;border-radius:50%;
+  background:radial-gradient(circle,var(--gold-soft),rgba(201,168,76,.1));
+  box-shadow:0 0 8px rgba(201,168,76,.6);opacity:0;
+  animation:particle-float linear infinite;
+}
+@keyframes particle-float{
+  0%{opacity:0;transform:translateY(40px) scale(.6)}
+  12%{opacity:.9}
+  88%{opacity:.7}
+  100%{opacity:0;transform:translateY(-120px) scale(1)}
+}
 
 .hero-inner{position:relative;z-index:3;width:100%}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+@media (max-width:980px){ .hero-grid{grid-template-columns:1fr;gap:30px} }
+
+/* central Maori art */
+.hero-art{position:relative;justify-self:center;width:min(100%,520px);aspect-ratio:1/1;
+  filter:drop-shadow(0 30px 60px rgba(0,0,0,.6));
+  opacity:0;animation:hero-up 1.4s var(--ease) .5s forwards;will-change:transform}
+.hero-art svg{width:100%;height:100%;overflow:visible}
+.hero-art .spin-slow{transform-origin:50% 50%;animation:art-spin 90s linear infinite}
+.hero-art .spin-rev{transform-origin:50% 50%;animation:art-spin 60s linear infinite reverse}
+.hero-art .pulse{animation:art-pulse 6s ease-in-out infinite}
+@keyframes art-spin{to{transform:rotate(360deg)}}
+@keyframes art-pulse{0%,100%{opacity:.5}50%{opacity:1}}
+@media (max-width:980px){ .hero-art{width:min(86%,420px);margin-top:8px;order:-1} }
+@media (max-width:560px){ .hero-art{width:min(96%,360px)} }
+
 .hero-loc{
   display:inline-flex;align-items:center;gap:12px;
   font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:30px;
+  color:var(--gold);margin-bottom:26px;
   opacity:0;transform:translateY(20px);animation:hero-up .9s var(--ease) .3s forwards;
 }
 .hero-loc::before{content:"";width:30px;height:1px;background:var(--gold)}
+.hero-loc .scramble{color:var(--white)}
 .hero h1{
-  font-size:clamp(3rem,11.5vw,9.5rem);font-weight:900;letter-spacing:-.03em;line-height:.94;
+  font-size:clamp(2.9rem,9vw,7.4rem);font-weight:900;letter-spacing:-.03em;line-height:.92;
   text-transform:uppercase;
 }
-.hero h1 .l{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg);
-  animation:hero-letter .95s var(--ease) forwards}
+.hero h1 .line{display:block;overflow:hidden;padding:.04em 0}
+.hero h1 .line-i{
+  display:block;
+  clip-path:inset(0 100% -10% 0);transform:translateY(.16em);
+  animation:title-reveal 1.15s var(--ease) forwards;
+}
+.hero h1 .line:nth-child(1) .line-i{animation-delay:.5s}
+.hero h1 .line:nth-child(2) .line-i{animation-delay:.72s}
 .hero h1 .ink{
-  display:block;font-style:italic;font-weight:500;text-transform:none;
+  font-style:italic;font-weight:500;text-transform:none;
   background:linear-gradient(120deg,var(--gold-soft),var(--gold) 45%,var(--jade-soft));
   -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+@keyframes title-reveal{
+  0%{clip-path:inset(0 100% -10% 0);transform:translateY(.16em)}
+  100%{clip-path:inset(0 0 -10% 0);transform:translateY(0)}
 }
 .hero-tag{
   margin-top:30px;font-family:"Playfair Display",serif;font-style:italic;
@@ -1040,60 +1086,140 @@ textarea:focus-visible,[tabindex]:focus-visible{
 
 <!-- ============== HERO ============== -->
 <section class="hero" id="hero">
-  <div class="hero-bg" id="heroBg" aria-hidden="true">
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="koruGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#c9a84c" stop-opacity=".55"/>
-          <stop offset="1" stop-color="#2d5a4e" stop-opacity=".35"/>
-        </linearGradient>
-        <radialGradient id="koruGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stop-color="#c9a84c" stop-opacity=".22"/>
-          <stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="900" cy="260" r="360" fill="url(#koruGlow)"/>
-      <g stroke="url(#koruGrad)" stroke-width="2.4" fill="none" stroke-linecap="round">
-        <!-- koru spirals -->
-        <path d="M250 560 q-130 -10 -150 -140 q-15 -110 95 -135 q95 -20 120 80 q18 80 -55 100 q-58 14 -78 -40 q-14 -42 30 -58">
-          <animateTransform attributeName="transform" type="rotate" from="0 200 470" to="360 200 470" dur="60s" repeatCount="indefinite"/>
-        </path>
-        <path d="M960 600 q150 -8 175 -165 q16 -130 -115 -158 q-112 -22 -140 96 q-20 95 66 118 q68 16 90 -48 q15 -50 -36 -68">
-          <animateTransform attributeName="transform" type="rotate" from="360 990 510" to="0 990 510" dur="80s" repeatCount="indefinite"/>
-        </path>
-        <!-- mangopare zigzag band -->
-        <path d="M0 120 L80 60 L160 120 L240 60 L320 120 L400 60 L480 120 L560 60 L640 120 L720 60 L800 120 L880 60 L960 120 L1040 60 L1120 120 L1200 60" opacity=".5"/>
-        <path d="M0 720 L80 660 L160 720 L240 660 L320 720 L400 660 L480 720 L560 660 L640 720 L720 660 L800 720 L880 660 L960 720 L1040 660 L1120 720 L1200 660" opacity=".5"/>
-      </g>
-      <g fill="#c9a84c" opacity=".5">
-        <circle cx="200" cy="470" r="5"/><circle cx="990" cy="510" r="5"/>
-      </g>
-    </svg>
+  <div class="hero-layers" aria-hidden="true">
+    <div class="h-layer" data-parallax data-speed="0.12">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="heroGlowA" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#2d5a4e" stop-opacity=".42"/><stop offset="1" stop-color="#2d5a4e" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="heroGlowB" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#c9a84c" stop-opacity=".26"/><stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="930" cy="240" r="420" fill="url(#heroGlowA)"/>
+        <circle cx="180" cy="640" r="360" fill="url(#heroGlowB)"/>
+      </svg>
+    </div>
+    <div class="h-layer" data-parallax data-speed="0.28">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <g stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round" opacity=".16">
+          <path d="M0 110 L80 56 L160 110 L240 56 L320 110 L400 56 L480 110 L560 56 L640 110 L720 56 L800 110 L880 56 L960 110 L1040 56 L1120 110 L1200 56"/>
+          <path d="M0 744 L80 690 L160 744 L240 690 L320 744 L400 690 L480 744 L560 690 L640 744 L720 690 L800 744 L880 690 L960 744 L1040 690 L1120 744 L1200 690"/>
+          <path d="M60 400 q120 -90 240 0 q120 90 240 0 q120 -90 240 0 q120 90 240 0"/>
+        </g>
+      </svg>
+    </div>
+    <div class="h-layer" data-parallax data-speed="0.5">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <g stroke="#3f7d6c" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".22">
+          <path d="M150 620 q-120 -10 -138 -150 q-14 -120 110 -140 q104 -16 118 90 q9 78 -66 90 q-58 8 -64 -46 q-3 -36 32 -44"/>
+          <path d="M1050 200 q120 10 138 150 q14 120 -110 140 q-104 16 -118 -90 q-9 -78 66 -90 q58 -8 64 46 q3 36 -32 44"/>
+        </g>
+      </svg>
+    </div>
   </div>
   <div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
   <div class="hero-vignette" aria-hidden="true"></div>
 
   <div class="container hero-inner">
-    <span class="hero-loc">Mollet del Vallès · Barcelona</span>
-    <h1>
-      <span class="l" style="animation-delay:.45s">T</span><span class="l" style="animation-delay:.5s">Ā</span><span class="l" style="animation-delay:.55s">M</span><span class="l" style="animation-delay:.6s">O</span><span class="l" style="animation-delay:.65s">K</span><span class="l" style="animation-delay:.7s">O</span>
-      <span class="ink l" style="animation-delay:.85s">Ink Studio</span>
-    </h1>
-    <p class="hero-tag">«<span class="mi">Ko te tāmoko he kōrero o te kiri</span>» — el tā moko es la voz de la piel: cada línea, una historia que se lleva para siempre.</p>
-    <p class="hero-mihi">
-      <span class="mi-line">Ko Tane Wiremu tōku ingoa, he tohunga tā moko.</span>
-      <span class="mi-trans">«Mi nombre es Tane Wiremu, soy maestro del tā moko.»</span>
-    </p>
-    <p class="hero-sub">Artista maorí de Aotearoa. Ta moko tradicional y Kirituhi contemporáneo, tatuados a mano con la herencia de cuatro generaciones.</p>
-    <div class="hero-actions">
-      <a href="#reservas" class="btn btn-primary" data-cursor>Reserva tu consulta
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#estilos" class="btn btn-ghost" data-cursor>Descubre los estilos</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="hero-loc">Estudio de tatuaje maorí · <span class="scramble" data-scramble="MOLLET DEL VALLÈS">MOLLET DEL VALLÈS</span></span>
+        <h1>
+          <span class="line"><span class="line-i">TĀMOKO</span></span>
+          <span class="line"><span class="line-i ink">Ink Studio</span></span>
+        </h1>
+        <p class="hero-tag">«<span class="mi">Ko te tāmoko he kōrero o te kiri</span>» — el tā moko es la voz de la piel: cada línea, una historia que se lleva para siempre.</p>
+        <p class="hero-mihi">
+          <span class="mi-line">Ko Tane Wiremu tōku ingoa, he tohunga tā moko.</span>
+          <span class="mi-trans">«Mi nombre es Tane Wiremu, soy maestro del tā moko.»</span>
+        </p>
+        <p class="hero-sub">Artista maorí de Aotearoa afincado en Barcelona. <strong>Tā moko</strong> tradicional y <strong>kirituhi</strong> contemporáneo, tatuados a mano con la herencia de cuatro generaciones.</p>
+        <div class="hero-actions">
+          <a href="#reservas" class="btn btn-primary" data-cursor>Reserva tu consulta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#estilos" class="btn btn-ghost" data-cursor>Descubre los estilos</a>
+        </div>
+      </div>
+
+      <div class="hero-art" id="heroArt" data-parallax data-speed="0.16" role="img" aria-label="Composición artística de tatuaje maorí: espiral koru, patrón mangōpare y tā moko facial">
+        <svg viewBox="0 0 600 600">
+          <defs>
+            <radialGradient id="haCore" cx="50%" cy="50%" r="55%">
+              <stop offset="0" stop-color="#e3c879" stop-opacity=".25"/><stop offset="1" stop-color="#e3c879" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="haGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e3c879"/><stop offset=".55" stop-color="#c9a84c"/><stop offset="1" stop-color="#9c7d2f"/>
+            </linearGradient>
+            <linearGradient id="haJade" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3f7d6c"/><stop offset="1" stop-color="#1d3e35"/>
+            </linearGradient>
+          </defs>
+          <circle cx="300" cy="300" r="290" fill="url(#haCore)"/>
+
+          <!-- outer rotating pakati / dog-tooth ring -->
+          <g class="spin-slow">
+            <circle cx="300" cy="300" r="270" fill="none" stroke="url(#haGold)" stroke-width="1.4" opacity=".5"/>
+            <g fill="url(#haGold)" opacity=".75">
+              <g id="haTooth"><path d="M300 30 l13 26 -26 0 z"/></g>
+              <use href="#haTooth" transform="rotate(20 300 300)"/><use href="#haTooth" transform="rotate(40 300 300)"/>
+              <use href="#haTooth" transform="rotate(60 300 300)"/><use href="#haTooth" transform="rotate(80 300 300)"/>
+              <use href="#haTooth" transform="rotate(100 300 300)"/><use href="#haTooth" transform="rotate(120 300 300)"/>
+              <use href="#haTooth" transform="rotate(140 300 300)"/><use href="#haTooth" transform="rotate(160 300 300)"/>
+              <use href="#haTooth" transform="rotate(180 300 300)"/><use href="#haTooth" transform="rotate(200 300 300)"/>
+              <use href="#haTooth" transform="rotate(220 300 300)"/><use href="#haTooth" transform="rotate(240 300 300)"/>
+              <use href="#haTooth" transform="rotate(260 300 300)"/><use href="#haTooth" transform="rotate(280 300 300)"/>
+              <use href="#haTooth" transform="rotate(300 300 300)"/><use href="#haTooth" transform="rotate(320 300 300)"/>
+              <use href="#haTooth" transform="rotate(340 300 300)"/>
+            </g>
+          </g>
+
+          <!-- mid mangopare chevron ring (counter-rotating) -->
+          <g class="spin-rev" fill="none" stroke="url(#haGold)" stroke-width="2.4" stroke-linejoin="round" opacity=".65">
+            <g id="haChev"><path d="M300 70 L322 110 L300 150 L278 110 Z"/></g>
+            <use href="#haChev" transform="rotate(30 300 300)"/><use href="#haChev" transform="rotate(60 300 300)"/>
+            <use href="#haChev" transform="rotate(90 300 300)"/><use href="#haChev" transform="rotate(120 300 300)"/>
+            <use href="#haChev" transform="rotate(150 300 300)"/><use href="#haChev" transform="rotate(180 300 300)"/>
+            <use href="#haChev" transform="rotate(210 300 300)"/><use href="#haChev" transform="rotate(240 300 300)"/>
+            <use href="#haChev" transform="rotate(270 300 300)"/><use href="#haChev" transform="rotate(300 300 300)"/>
+            <use href="#haChev" transform="rotate(330 300 300)"/>
+          </g>
+
+          <!-- central tā moko facial composition -->
+          <g stroke="url(#haGold)" fill="none" stroke-linecap="round">
+            <ellipse cx="300" cy="305" rx="150" ry="185" stroke-width="2" opacity=".35"/>
+            <g stroke-width="3">
+              <path d="M232 215 q-58 36 -42 116 q14 60 74 50 q44 -8 34 -56 q-8 -36 -46 -28"/>
+              <path d="M368 215 q58 36 42 116 q-14 60 -74 50 q-44 -8 -34 -56 q8 -36 46 -28"/>
+              <path d="M300 330 q-40 42 -14 116 q18 56 14 96 M300 330 q40 42 14 116 q-18 56 -14 96"/>
+              <path d="M300 150 q34 40 0 92 q-30 40 0 80"/>
+            </g>
+            <g stroke-width="2" opacity=".6">
+              <path d="M210 300 q-34 64 6 150 M390 300 q34 64 -6 150"/>
+              <path d="M250 180 q50 -28 100 0 M232 470 q68 44 136 0"/>
+              <path d="M280 240 q-20 18 -20 50 M320 240 q20 18 20 50"/>
+            </g>
+          </g>
+
+          <!-- twin koru spirals -->
+          <g stroke="url(#haJade)" stroke-width="3" fill="none" stroke-linecap="round" class="pulse">
+            <path d="M158 470 q-70 -54 -36 -130 q30 -68 100 -44 q56 20 38 74 q-14 42 -52 30 q-26 -8 -18 -34"/>
+            <path d="M442 470 q70 -54 36 -130 q-30 -68 -100 -44 q-56 20 -38 74 q14 42 52 30 q26 -8 18 -34"/>
+          </g>
+
+          <g fill="url(#haGold)">
+            <circle cx="300" cy="305" r="6"/><circle cx="232" cy="215" r="4"/><circle cx="368" cy="215" r="4"/>
+            <circle cx="300" cy="150" r="3.5"/><circle cx="158" cy="470" r="3.5"/><circle cx="442" cy="470" r="3.5"/>
+          </g>
+        </svg>
+      </div>
     </div>
   </div>
 
-  <div class="hero-scroll" aria-hidden="true">Desliza<i></i></div>
+  <a href="#filosofia" class="hero-scroll" aria-label="Desliza para descubrir más">Desliza<i></i></a>
 </section>
 
 <!-- ============== ABOUT ============== -->
@@ -2063,14 +2189,84 @@ textarea:focus-visible,[tabindex]:focus-visible{
     });
   }
 
-  /* ---- Hero parallax ---- */
-  var heroBg = document.getElementById("heroBg");
-  if(heroBg && !rm){
-    window.addEventListener("scroll", function(){
+  /* ---- Multi-layer hero parallax ---- */
+  var pLayers = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
+  if(pLayers.length && !rm){
+    var pTick = false;
+    function pUpdate(){
       var y = window.pageYOffset;
-      if(y < window.innerHeight) heroBg.style.transform = "translateY("+(y*0.32)+"px) scale(1.05)";
+      if(y < window.innerHeight * 1.1){
+        pLayers.forEach(function(el){
+          var sp = parseFloat(el.getAttribute("data-speed")) || 0.2;
+          el.style.transform = "translate3d(0," + (y * sp) + "px,0)";
+        });
+      }
+      pTick = false;
+    }
+    window.addEventListener("scroll", function(){
+      if(!pTick){ pTick = true; requestAnimationFrame(pUpdate); }
     }, {passive:true});
+    pUpdate();
   }
+
+  /* ---- Hero gold particles ---- */
+  var hp = document.getElementById("heroParticles");
+  if(hp && !rm){
+    var pc = window.innerWidth < 600 ? 9 : 16;
+    var frag = document.createDocumentFragment();
+    for(var i=0;i<pc;i++){
+      var s = document.createElement("i");
+      var sz = (Math.random()*4 + 2).toFixed(1);
+      s.style.left = (Math.random()*100).toFixed(2) + "%";
+      s.style.top = (55 + Math.random()*45).toFixed(2) + "%";
+      s.style.width = s.style.height = sz + "px";
+      s.style.animationDuration = (7 + Math.random()*9).toFixed(1) + "s";
+      s.style.animationDelay = (-Math.random()*12).toFixed(1) + "s";
+      frag.appendChild(s);
+    }
+    hp.appendChild(frag);
+  }
+
+  /* ---- Text scramble on keywords ---- */
+  (function(){
+    var chars = "ĀKMOTRWHŪ01#/▮▯·";
+    function scramble(el){
+      var target = el.getAttribute("data-scramble") || el.textContent;
+      var len = target.length, frame = 0, queue = [];
+      for(var i=0;i<len;i++){
+        var start = Math.floor(Math.random()*16);
+        var end = start + Math.floor(Math.random()*22) + 8;
+        queue.push({from:target[i],to:target[i],start:start,end:end});
+      }
+      function run(){
+        var out = "", done = 0;
+        for(var i=0;i<queue.length;i++){
+          var q = queue[i];
+          if(frame >= q.end){ done++; out += q.to; }
+          else if(frame >= q.start){
+            if(!q.ch || Math.random() < 0.32) q.ch = chars[Math.floor(Math.random()*chars.length)];
+            out += '<span style="color:var(--gold)">'+q.ch+'</span>';
+          } else { out += q.to === " " ? " " : ""; }
+        }
+        el.innerHTML = out;
+        if(done < queue.length){ frame++; requestAnimationFrame(run); }
+        else el.textContent = target;
+      }
+      run();
+    }
+    var sEls = document.querySelectorAll("[data-scramble]");
+    if(!sEls.length) return;
+    if(rm) return;
+    var sio = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if(e.isIntersecting){ scramble(e.target); sio.unobserve(e.target); }
+      });
+    }, {threshold:0.6});
+    sEls.forEach(function(el){
+      sio.observe(el);
+      el.addEventListener("mouseenter", function(){ scramble(el); });
+    });
+  })();
 
   /* ---- Reveal on scroll (for later sections) ---- */
   var io = new IntersectionObserver(function(entries){
