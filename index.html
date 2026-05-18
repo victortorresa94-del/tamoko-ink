@@ -301,6 +301,57 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
 .to-top:hover{background:var(--gold);color:var(--black)}
 .to-top svg{width:18px;height:18px}
 @media (max-width:560px){ .to-top{right:18px;bottom:18px} }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{background:linear-gradient(180deg,var(--black),var(--black-soft))}
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:center}
+@media (max-width:920px){ .about-grid{grid-template-columns:1fr;gap:54px} }
+
+.about-portrait{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line)}
+.about-portrait .pbg{
+  position:absolute;inset:0;
+  background:linear-gradient(155deg,#1c2b27 0%,#0d1714 45%,#1a1407 100%);
+}
+.about-portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.about-portrait .ptag{
+  position:absolute;left:22px;bottom:20px;z-index:2;
+  font-family:"Playfair Display",serif;font-style:italic;font-size:1.05rem;color:var(--white);
+  text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.about-portrait .ptag b{display:block;font-style:normal;font-weight:700;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.about-portrait::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.6))}
+
+.about-body h2{font-size:clamp(2rem,4.6vw,3.3rem);margin:20px 0 22px}
+.about-body p{color:var(--muted);margin-bottom:18px;font-size:1.04rem}
+.about-body p .hl{color:var(--white)}
+.about-sign{margin-top:26px;font-family:"Playfair Display",serif;font-style:italic;
+  font-size:1.5rem;color:var(--gold)}
+.about-sign small{display:block;font-family:"Inter";font-style:normal;font-size:.74rem;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--muted-dim);margin-top:6px}
+
+.timeline{margin-top:54px;border-left:1px solid var(--line);padding-left:34px;
+  display:flex;flex-direction:column;gap:34px}
+.tl-item{position:relative}
+.tl-item::before{content:"";position:absolute;left:-41px;top:5px;width:13px;height:13px;
+  border-radius:50%;background:var(--black);border:2px solid var(--gold);
+  box-shadow:0 0 0 5px rgba(201,168,76,.10)}
+.tl-year{font-family:"Playfair Display",serif;font-weight:700;color:var(--gold);font-size:1.15rem}
+.tl-item h4{font-size:1.05rem;margin:4px 0 6px;font-family:"Inter";font-weight:600;letter-spacing:0}
+.tl-item p{color:var(--muted);font-size:.96rem;margin:0}
+
+.stats{margin-top:96px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+  border-top:1px solid var(--line);padding-top:56px}
+@media (max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);gap:40px 24px} }
+.stat{text-align:left}
+.stat .num{font-family:"Playfair Display",serif;font-weight:800;
+  font-size:clamp(2.6rem,6vw,3.8rem);line-height:1;
+  background:linear-gradient(120deg,var(--gold-soft),var(--gold) 55%,var(--jade-soft));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{margin-top:12px;color:var(--muted);font-size:.86rem;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -405,6 +456,88 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   <div class="hero-scroll" aria-hidden="true">Scroll<i></i></div>
 </section>
 
+<!-- ============== ABOUT ============== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait reveal" aria-label="Retrato estilizado de Tane Wiremu">
+        <div class="pbg"></div>
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="abFace" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c9a84c" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#2d5a4e" stop-opacity=".7"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" stroke="url(#abFace)" stroke-width="2" stroke-linecap="round">
+            <ellipse cx="200" cy="215" rx="118" ry="150" opacity=".5"/>
+            <!-- ta moko facial spirals -->
+            <path d="M150 150 q-44 26 -30 86 q10 44 56 36 q34 -6 26 -44 q-6 -26 -34 -20"/>
+            <path d="M250 150 q44 26 30 86 q-10 44 -56 36 q-34 -6 -26 -44 q6 -26 34 -20"/>
+            <path d="M200 250 q-30 30 -10 86 q14 40 10 70"/>
+            <path d="M200 250 q30 30 10 86 q-14 40 -10 70"/>
+            <path d="M120 250 q-24 50 6 110" opacity=".7"/>
+            <path d="M280 250 q24 50 -6 110" opacity=".7"/>
+            <path d="M165 120 q35 -22 70 0" />
+            <path d="M150 330 q50 34 100 0"/>
+          </g>
+          <g fill="#c9a84c">
+            <circle cx="150" cy="150" r="3"/><circle cx="250" cy="150" r="3"/>
+            <circle cx="200" cy="250" r="3"/>
+          </g>
+        </svg>
+        <div class="ptag"><b>El Artista</b>Tane Wiremu · Aotearoa → Catalunya</div>
+      </div>
+
+      <div class="about-body reveal">
+        <span class="eyebrow">Whakapapa · La historia</span>
+        <h2>De Auckland a Mollet, una herencia tatuada en la piel</h2>
+        <p>Tane Wiremu (38) creció en <span class="hl">Auckland, Nueva Zelanda</span>, entre el sonido del <em>uhi</em> y las historias de su iwi. Su bisabuelo fue <span class="hl">tohunga tā moko</span> —maestro tatuador— y le enseñó que cada espiral guarda un linaje, una promesa, un nombre.</p>
+        <p>En <span class="hl">2009</span> cruzó el mundo hasta Barcelona buscando un nuevo capítulo sin soltar el antiguo. Tras años perfeccionando su técnica y aprendiendo a traducir el tā moko con respeto cultural, en <span class="hl">2014</span> abrió <span class="hl">TĀMOKO INK</span> en Mollet del Vallès.</p>
+        <p>Hoy tatúa <em>ta moko</em> tradicional para quienes comparten ascendencia maorí y <em>kirituhi</em> —diseño de inspiración maorí— para todos los que quieren llevar una historia contada con honestidad.</p>
+        <div class="about-sign">Tane Wiremu
+          <small>Tohunga tā moko · Fundador de TĀMOKO INK</small>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-year">1988</div>
+            <h4>Nacido en Auckland</h4>
+            <p>Crece en una familia con tradición de tohunga tā moko; su bisabuelo le transmite los primeros patrones.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2006</div>
+            <h4>Aprendizaje tradicional</h4>
+            <p>Comienza su formación formal en el arte del tā moko bajo maestros de su iwi en Aotearoa.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2009</div>
+            <h4>Llegada a Barcelona</h4>
+            <p>Se instala en Catalunya y dedica años a dominar técnica contemporánea y cuidado de la piel.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2014</div>
+            <h4>Nace TĀMOKO INK</h4>
+            <p>Abre su estudio en Carrer de la República, 47, Mollet del Vallès — un espacio para el arte con raíz.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Hoy</div>
+            <h4>Más de una década de oficio</h4>
+            <p>Referente del tatuaje maorí en el área de Barcelona, con clientes de toda Europa.</p>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><div class="num" data-count="15" data-suffix="">0</div><div class="lbl">Años de oficio</div></div>
+          <div class="stat"><div class="num" data-count="1800" data-suffix="+">0</div><div class="lbl">Tatuajes realizados</div></div>
+          <div class="stat"><div class="num" data-count="4" data-suffix="">0</div><div class="lbl">Generaciones de linaje</div></div>
+          <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Diseños únicos</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== [SECCIONES SIGUIENTES SE AÑADIRÁN AQUÍ] ============== -->
 
 </main>
@@ -501,6 +634,31 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   }, {threshold:0.14, rootMargin:"0px 0px -8% 0px"});
   window.__revealObserver = io;
   document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+  /* ---- Animated counters ---- */
+  var counters = document.querySelectorAll("[data-count]");
+  if(counters.length){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var el = en.target;
+        cio.unobserve(el);
+        var target = parseFloat(el.getAttribute("data-count"));
+        var suffix = el.getAttribute("data-suffix") || "";
+        if(rm){ el.textContent = target + suffix; return; }
+        var dur = 1700, start = null;
+        function step(ts){
+          if(!start) start = ts;
+          var p = Math.min((ts-start)/dur, 1);
+          var eased = 1 - Math.pow(1-p, 3);
+          el.textContent = Math.round(target*eased) + suffix;
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:0.6});
+    counters.forEach(function(c){ cio.observe(c); });
+  }
 
   /* ---- Back to top ---- */
   if(toTop){
