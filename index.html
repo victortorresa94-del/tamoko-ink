@@ -445,6 +445,35 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   transition:color .4s var(--ease),transform .5s var(--ease)}
 .step:hover .ic{color:var(--gold);transform:rotate(8deg) scale(1.08)}
 .step .ic svg{width:100%;height:100%}
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.testimonios{background:linear-gradient(180deg,var(--black-soft),var(--black))}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:920px){ .tgrid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .tgrid{grid-template-columns:1fr} }
+.tcard{
+  border:1px solid var(--line);border-radius:18px;padding:34px 30px;
+  background:var(--black-elev);display:flex;flex-direction:column;gap:18px;
+  transition:transform .5s var(--ease),border-color .5s var(--ease);
+}
+.tcard:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.4)}
+.tcard .quote-mark{font-family:"Playfair Display",serif;font-size:3.4rem;line-height:.5;
+  color:var(--gold);opacity:.5;height:24px}
+.tcard .stars{display:flex;gap:4px;color:var(--gold)}
+.tcard .stars svg{width:16px;height:16px}
+.tcard p{color:rgba(255,255,255,.82);font-size:1rem;flex:1;font-style:italic;
+  font-family:"Playfair Display",serif}
+.tperson{display:flex;align-items:center;gap:14px;margin-top:6px}
+.tavatar{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-family:"Playfair Display",serif;font-weight:700;color:var(--black);font-size:1rem}
+.tperson b{display:block;font-family:"Inter";font-weight:600;font-size:.96rem;letter-spacing:0}
+.tperson span{font-size:.82rem;color:var(--muted-dim)}
+.trating{margin-top:60px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:14px;color:var(--muted);font-size:.95rem;text-align:center}
+.trating b{color:var(--white);font-family:"Playfair Display",serif;font-size:1.3rem}
+.trating .dot{width:4px;height:4px;border-radius:50%;background:var(--muted-dim)}
 </style>
 </head>
 <body>
@@ -923,6 +952,121 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
         <div class="mi">Llevarlo con orgullo</div>
         <p>Tu historia ya camina contigo. Para muchos clientes, esto es el inicio de una relación de años con el estudio.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIOS ============== -->
+<section class="section testimonios" id="testimonios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ngā kōrero · Las voces</span>
+      <h2>Lo que dicen quienes ya llevan su historia</h2>
+      <p>Personas reales que confiaron su piel a Tane. Estas son sus palabras.</p>
+    </div>
+
+    <div class="tgrid">
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>Tane no me tatuó un dibujo, me tatuó mi historia. Antes de coger la máquina estuvimos dos horas hablando de mi familia. El resultado es lo más personal que tengo.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#c9a84c,#e3c879)">MA</span>
+          <div><b>Marc Aguilar</b><span>Sabadell · Kirituhi en antebrazo</span></div>
+        </div>
+      </article>
+
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>Tengo ascendencia maorí por parte de madre y buscaba a alguien que lo hiciera con respeto cultural. Tane es un tohunga de verdad. Una experiencia espiritual, no solo estética.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#2d5a4e,#3f7d6c)">HT</span>
+          <div><b>Hana Tepania</b><span>Barcelona · Tā moko en hombro</span></div>
+        </div>
+      </article>
+
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>El estudio en Mollet es impecable, limpísimo y con una energía muy tranquila. Vine desde Girona y volvería sin dudarlo. Profesionalidad de otro nivel.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#c9a84c,#2d5a4e)">LF</span>
+          <div><b>Laia Ferrer</b><span>Girona · Koru en muñeca</span></div>
+        </div>
+      </article>
+
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>Llevo tres piezas con Tane y cada una mejor que la anterior. Te explica el significado de cada símbolo mientras tatúa. Es un artista y un narrador.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#e3c879,#c9a84c)">DR</span>
+          <div><b>David Roca</b><span>Mollet del Vallès · Manga maorí</span></div>
+        </div>
+      </article>
+
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>Quería un kirituhi para mi padre fallecido. Tane supo escuchar el duelo y convertirlo en algo bello. Salí del estudio llorando de emoción.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#3f7d6c,#c9a84c)">NS</span>
+          <div><b>Núria Solé</b><span>Granollers · Kirituhi conmemorativo</span></div>
+        </div>
+      </article>
+
+      <article class="tcard reveal" data-cursor>
+        <div class="quote-mark">&ldquo;</div>
+        <div class="stars" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.5 1.3 6.6L12 17l-5.9 3.2 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+        </div>
+        <p>Viajé desde Toulouse solo para tatuarme con él tras ver su trabajo online. Superó cualquier expectativa. El mejor en estilo maorí del sur de Europa.</p>
+        <div class="tperson">
+          <span class="tavatar" style="background:linear-gradient(135deg,#c9a84c,#e3c879)">PM</span>
+          <div><b>Pierre Maurin</b><span>Toulouse, FR · Mangōpare en gemelo</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="trating reveal">
+      <b>4,9 / 5</b><span class="dot"></span>
+      <span>basado en <b style="font-size:.95rem">240+</b> reseñas verificadas</span>
+      <span class="dot"></span><span>Google · Instagram · boca a boca</span>
     </div>
   </div>
 </section>
