@@ -1059,6 +1059,117 @@ textarea:focus-visible,[tabindex]:focus-visible{
   font-size:.92rem;margin-bottom:8px;display:block}
 .phil-col p{color:var(--muted);font-size:.95rem;margin:0}
 @media (max-width:560px){ .filosofia{padding:110px 0} }
+
+/* ============================================================
+   INSTAGRAM grid
+   ============================================================ */
+.insta{background:var(--black)}
+.insta-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  flex-wrap:wrap;margin-bottom:46px}
+.insta-handle{display:inline-flex;align-items:center;gap:10px;color:var(--gold);
+  font-weight:600;font-size:.95rem;border:1px solid var(--line);padding:11px 20px;
+  border-radius:999px;transition:background .3s var(--ease),transform .3s var(--ease)}
+.insta-handle:hover{background:rgba(201,168,76,.08);transform:translateY(-2px)}
+.insta-handle svg{width:18px;height:18px}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+@media (max-width:900px){ .insta-grid{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:520px){ .insta-grid{grid-template-columns:repeat(2,1fr)} }
+.ig{position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);display:block;isolation:isolate}
+.ig svg{width:100%;height:100%;transition:transform .8s var(--ease)}
+.ig:hover svg{transform:scale(1.1)}
+.ig::after{content:"";position:absolute;inset:0;background:rgba(8,8,8,.55);
+  opacity:0;transition:opacity .4s var(--ease);display:grid;place-items:center}
+.ig:hover::after{opacity:1}
+.ig .ig-ic{position:absolute;inset:0;display:grid;place-items:center;z-index:2;
+  color:var(--white);opacity:0;transform:scale(.7);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.ig:hover .ig-ic{opacity:1;transform:scale(1)}
+.ig .ig-ic svg{width:30px;height:30px}
+
+/* ============================================================
+   TA MOKO — rich AIO content
+   ============================================================ */
+.historia{background:linear-gradient(180deg,var(--black),var(--black-soft))}
+.historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+@media (max-width:880px){ .historia-grid{grid-template-columns:1fr;gap:34px} }
+.historia h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:18px 0 22px;max-width:13ch}
+.historia article p{color:var(--muted);margin-bottom:18px;font-size:1.04rem;line-height:1.8}
+.historia article p strong{color:var(--white);font-weight:600}
+.historia h3{font-family:"Inter";font-weight:600;font-size:1.12rem;letter-spacing:0;
+  margin:30px 0 12px;color:var(--white)}
+.historia .reo-term{color:var(--gold);font-style:italic;font-family:"Playfair Display",serif}
+.historia-aside{border-left:1px solid var(--line);padding-left:34px;align-self:start;
+  position:sticky;top:100px}
+@media (max-width:880px){ .historia-aside{border-left:0;padding-left:0;position:static} }
+.historia-aside dl{margin:0}
+.historia-aside dt{font-family:"Playfair Display",serif;font-style:italic;color:var(--gold);
+  font-size:1.05rem;margin-top:22px}
+.historia-aside dt:first-child{margin-top:0}
+.historia-aside dd{color:var(--muted);font-size:.95rem;margin:6px 0 0}
+
+/* ============================================================
+   PRECIOS
+   ============================================================ */
+.precios{background:var(--black);position:relative;overflow:hidden}
+.precios .glow{position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.12),transparent 70%);
+  top:-220px;right:-160px;pointer-events:none}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:980px){ .price-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){ .price-grid{grid-template-columns:1fr} }
+.price-card{
+  position:relative;border:1px solid var(--line);border-radius:18px;padding:34px 28px;
+  background:var(--black-elev);display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .5s var(--ease),border-color .5s var(--ease),background .5s var(--ease);
+}
+.price-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.45)}
+.price-card.featured{border-color:rgba(201,168,76,.55);background:linear-gradient(180deg,rgba(201,168,76,.07),transparent)}
+.price-tag{position:absolute;top:16px;right:16px;font-size:.66rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--black);background:var(--gold);
+  padding:5px 12px;border-radius:999px}
+.price-card .reo{color:var(--gold);font-family:"Playfair Display",serif;font-style:italic;
+  font-size:.92rem;margin-bottom:6px;display:block}
+.price-card h3{font-size:1.4rem;margin-bottom:14px}
+.price-amount{font-family:"Playfair Display",serif;font-weight:800;font-size:2.4rem;
+  line-height:1;color:var(--white);display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+.price-amount small{font-family:"Inter";font-size:.78rem;font-weight:500;color:var(--muted-dim);
+  text-transform:uppercase;letter-spacing:.1em}
+.price-amount .from{font-size:.8rem;color:var(--muted);font-family:"Inter";font-weight:500;align-self:center}
+.price-desc{color:var(--muted);font-size:.95rem;margin:12px 0 20px}
+.price-feats{display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex:1}
+.price-feats li{display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,.78);
+  font-size:.92rem}
+.price-feats svg{width:16px;height:16px;color:var(--gold);flex:none;margin-top:3px}
+.price-card .btn{justify-content:center;width:100%;font-size:.86rem;padding:14px}
+.precios-note{margin-top:34px;text-align:center;color:var(--muted-dim);font-size:.88rem}
+
+/* ============================================================
+   FAQ accordion
+   ============================================================ */
+.faq{background:linear-gradient(180deg,var(--black-soft),var(--black))}
+.faq-grid{max-width:880px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:28px 6px;text-align:left;font-family:"Playfair Display",serif;
+  font-size:clamp(1.05rem,2.1vw,1.32rem);font-weight:600;color:var(--white);
+  transition:color .3s var(--ease);
+}
+.faq-q:hover{color:var(--gold)}
+.faq-ic{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;position:relative;transition:border-color .35s var(--ease),background .35s var(--ease)}
+.faq-item.open .faq-ic{background:var(--gold);border-color:var(--gold)}
+.faq-ic::before,.faq-ic::after{content:"";position:absolute;background:var(--gold);
+  border-radius:2px;transition:transform .4s var(--ease),background .35s var(--ease)}
+.faq-ic::before{width:13px;height:2px}
+.faq-ic::after{width:2px;height:13px}
+.faq-item.open .faq-ic::before,.faq-item.open .faq-ic::after{background:var(--black)}
+.faq-item.open .faq-ic::after{transform:scaleY(0)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .5s var(--ease)}
+.faq-a-in{padding:0 6px 30px;color:var(--muted);font-size:1rem;line-height:1.8;max-width:74ch}
+.faq-a-in strong{color:rgba(255,255,255,.85);font-weight:600}
+@media (prefers-reduced-motion:reduce){ .faq-a{transition:none} }
 </style>
 </head>
 <body>
@@ -1110,8 +1221,9 @@ textarea:focus-visible,[tabindex]:focus-visible{
       <a href="#estilos" data-cursor>Estilos</a>
       <a href="#galeria" data-cursor>Galería</a>
       <a href="#proceso" data-cursor>Proceso</a>
+      <a href="#precios" data-cursor>Precios</a>
+      <a href="#faq" data-cursor>FAQ</a>
       <a href="#testimonios" data-cursor>Opiniones</a>
-      <a href="#reservas" data-cursor>Contacto</a>
       <a href="#reservas" class="nav-cta" data-cursor>Reservar cita
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1913,6 +2025,50 @@ textarea:focus-visible,[tabindex]:focus-visible{
   </div>
 </section>
 
+<!-- ============== INSTAGRAM ============== -->
+<section class="section insta" id="instagram">
+  <div class="container">
+    <div class="insta-head">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">@tamokoink · Aotearoa en Barcelona</span>
+        <h2>Trabajo reciente del estudio</h2>
+        <p>Piezas de tā moko y kirituhi tatuadas en Mollet del Vallès. Síguenos para ver el proceso de cada diseño.</p>
+      </div>
+      <a class="insta-handle reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Seguir en Instagram
+      </a>
+    </div>
+
+    <div class="insta-grid">
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: koru en antebrazo">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a33"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs><rect width="300" height="300" fill="url(#ig1)"/><g fill="none" stroke="#e3c879" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M150 250 q-90 -10 -98 -116 q-6 -94 96 -108 q80 -10 88 70 q5 56 -54 64 q-44 6 -48 -38"/></g><circle cx="150" cy="158" r="5" fill="#e3c879"/></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: mangōpare en gemelo">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#1a1407"/><g fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".85"><path d="M30 50 L100 150 L30 250"/><path d="M110 50 L180 150 L110 250"/><path d="M190 50 L260 150 L190 250"/></g></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: tā moko facial">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig3" cx="50%" cy="44%" r="58%"><stop offset="0" stop-color="#2d5a4e"/><stop offset="1" stop-color="#0a0a0a"/></radialGradient></defs><rect width="300" height="300" fill="url(#ig3)"/><g fill="none" stroke="#e3c879" stroke-width="3" stroke-linecap="round" opacity=".85"><path d="M110 100 q-34 22 -24 70 q9 36 46 28 q26 -6 20 -36"/><path d="M190 100 q34 22 24 70 q-9 36 -46 28 q-26 -6 -20 -36"/><path d="M150 170 q-22 26 -6 76 M150 170 q22 26 6 76"/></g></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: kōwhaiwhai en banda">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#13231f"/><g fill="none" stroke="#c9a84c" stroke-width="2.6" stroke-linecap="round" opacity=".8"><path d="M-10 80 q80 -54 160 0 q80 54 160 0"/><path d="M-10 150 q80 -54 160 0 q80 54 160 0"/><path d="M-10 220 q80 -54 160 0 q80 54 160 0"/></g></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: hei tiki">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14271f"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient></defs><rect width="300" height="300" fill="url(#ig5)"/><g fill="none" stroke="#e3c879" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".85" transform="rotate(-8 150 150)"><path d="M150 60 q-58 14 -64 80 q-5 54 30 80 q34 26 68 0 q35 -26 30 -80 q-6 -66 -64 -80 Z"/><circle cx="130" cy="130" r="13"/><circle cx="170" cy="130" r="13"/><path d="M126 172 q24 16 48 0"/></g></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <a class="ig reveal" href="https://www.instagram.com/tamokoink" target="_blank" rel="noopener" data-cursor aria-label="Publicación de Instagram: pākati dog tooth">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#161616"/><g fill="none" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round" opacity=".8"><path d="M40 70 q110 -40 220 0"/><path d="M40 150 q110 -40 220 0"/><path d="M40 230 q110 -40 220 0"/></g><g fill="#c9a84c" opacity=".8"><path d="M60 74 l16 -30 16 30 z"/><path d="M120 74 l16 -30 16 30 z"/><path d="M180 74 l16 -30 16 30 z"/><path d="M60 154 l16 -30 16 30 z"/><path d="M120 154 l16 -30 16 30 z"/><path d="M180 154 l16 -30 16 30 z"/></g></svg>
+        <span class="ig-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============== TESTIMONIOS ============== -->
 <section class="section testimonios" id="testimonios">
   <div class="container">
@@ -2024,6 +2180,150 @@ textarea:focus-visible,[tabindex]:focus-visible{
       <b>4,9 / 5</b><span class="dot"></span>
       <span>basado en <b style="font-size:.95rem">240+</b> reseñas verificadas</span>
       <span class="dot"></span><span>Google · Instagram · boca a boca</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TA MOKO — contenido AIO ============== -->
+<section class="section historia" id="ta-moko-historia">
+  <div class="container">
+    <div class="historia-grid">
+      <div>
+        <span class="eyebrow reveal">Mātauranga · Saber maorí</span>
+        <h2 class="reveal">Qué es el tā moko y por qué importa</h2>
+        <article class="reveal">
+          <p>El <strong>tā moko</strong> es el arte tradicional del tatuaje maorí de <strong>Aotearoa</strong> (Nueva Zelanda). No es ornamento: es un texto vivo. Cada espiral, cada línea y cada espacio negativo codifican el <span class="reo-term">whakapapa</span> —la genealogía—, el <span class="reo-term">iwi</span> (tribu), el <span class="reo-term">hapū</span> (subtribu), los logros y el rol social de quien lo lleva. Leer un rostro con moko es leer una biografía.</p>
+          <p>Tradicionalmente se aplicaba con <span class="reo-term">uhi</span> (cinceles de hueso de albatros) que tallaban surcos en la piel, acompañado de karakia (oraciones). Hoy el <span class="reo-term">tohunga tā moko</span> —el maestro tatuador— combina técnica contemporánea con higiene moderna, conservando el significado ceremonial.</p>
+          <h3>Tā moko frente a kirituhi</h3>
+          <p>El <strong>tā moko</strong> se reserva a personas de ascendencia maorí, porque porta elementos <span class="reo-term">tapu</span> (sagrados) ligados al linaje. El <strong>kirituhi</strong> —literalmente «piel dibujada»— usa la misma estética y técnica maorí pero sin esos elementos sagrados, de modo que cualquier persona puede llevar un diseño de inspiración maorí con respeto cultural y sin apropiación.</p>
+          <h3>Los motivos y su significado</h3>
+          <p>El <span class="reo-term">koru</span> (espiral de helecho) simboliza vida nueva y crecimiento; el <span class="reo-term">mangōpare</span> (tiburón martillo) la fuerza y la tenacidad; el <span class="reo-term">kōwhaiwhai</span> el linaje y la continuidad; el <span class="reo-term">pākati</span> (diente de perro) la valentía; el <span class="reo-term">unaunahi</span> (escamas) la abundancia, y el <span class="reo-term">puhoro</span> la velocidad y la destreza. En TĀMOKO INK cada composición se diseña a mano combinando estos motivos según tu historia personal.</p>
+        </article>
+      </div>
+      <aside class="historia-aside reveal" aria-label="Glosario de términos maoríes">
+        <dl>
+          <dt>Tā moko</dt><dd>Tatuaje maorí sagrado que codifica el linaje y la identidad.</dd>
+          <dt>Kirituhi</dt><dd>Diseño de inspiración maorí para personas sin ascendencia maorí.</dd>
+          <dt>Whakapapa</dt><dd>Genealogía: la cadena de ancestros que define quién eres.</dd>
+          <dt>Tohunga tā moko</dt><dd>Maestro tatuador, depositario del conocimiento del moko.</dd>
+          <dt>Mana</dt><dd>Prestigio y autoridad espiritual de una persona.</dd>
+          <dt>Tapu</dt><dd>Lo sagrado, lo que está sujeto a restricción ceremonial.</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PRECIOS ============== -->
+<section class="section precios" id="precios">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ngā utu · Precios</span>
+      <h2>Tarifas claras, arte sin atajos</h2>
+      <p>Cada pieza es única, así que el precio final se cierra tras la consulta. Estos son los puntos de partida orientativos.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card reveal" data-cursor>
+        <span class="reo">Kōrero</span>
+        <h3>Consulta</h3>
+        <div class="price-amount">Gratis</div>
+        <p class="price-desc">Conversación, asesoramiento cultural y conceptualización del diseño. Sin compromiso.</p>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sesión de 45–60 min</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Orientación tā moko / kirituhi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Presupuesto personalizado</li>
+        </ul>
+        <a href="#reservas" class="btn btn-ghost" data-cursor>Reservar consulta</a>
+      </div>
+
+      <div class="price-card reveal" data-cursor>
+        <span class="reo">Iti</span>
+        <h3>Pieza pequeña</h3>
+        <div class="price-amount"><span class="from">desde</span>180<small>€</small></div>
+        <p class="price-desc">Koru, símbolo o motivo personal de formato reducido, en una sola sesión.</p>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Diseño a mano único</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>1–3 h de sesión</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Guía de cuidado posterior</li>
+        </ul>
+        <a href="#reservas" class="btn btn-ghost" data-cursor>Reservar</a>
+      </div>
+
+      <div class="price-card featured reveal" data-cursor>
+        <span class="price-tag">Más popular</span>
+        <span class="reo">Nui</span>
+        <h3>Pieza grande</h3>
+        <div class="price-amount"><span class="from">desde</span>450<small>€</small></div>
+        <p class="price-desc">Composición de brazo, pierna o pecho a medida, con narrativa completa.</p>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Diseño narrativo de tu whakapapa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>1–2 sesiones de 3–5 h</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguimiento de cicatrización</li>
+        </ul>
+        <a href="#reservas" class="btn btn-primary" data-cursor>Reservar</a>
+      </div>
+
+      <div class="price-card reveal" data-cursor>
+        <span class="reo">Ringa katoa</span>
+        <h3>Full sleeve</h3>
+        <div class="price-amount"><span class="from">desde</span>1800<small>€</small></div>
+        <p class="price-desc">Manga completa o pieza corporal extensa, desarrollada en varias sesiones.</p>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Proyecto multisesión planificado</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Composición corporal integral</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Pago fraccionado por sesión</li>
+        </ul>
+        <a href="#reservas" class="btn btn-ghost" data-cursor>Reservar</a>
+      </div>
+    </div>
+    <p class="precios-note reveal">Los precios son orientativos y se confirman tras la consulta gratuita. Aceptamos efectivo, tarjeta y Bizum.</p>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+      <span class="eyebrow" style="justify-content:center">Ngā pātai · Preguntas frecuentes</span>
+      <h2>Todo lo que quieres saber antes de tatuarte</h2>
+      <p style="margin-left:auto;margin-right:auto">Resolvemos las dudas más habituales sobre el proceso, el dolor, la cultura y las reservas.</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cuál es la diferencia entre tā moko y kirituhi?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">El <strong>tā moko</strong> es el tatuaje maorí sagrado, reservado a personas con ascendencia maorí: codifica el whakapapa (linaje), el estatus y la historia personal. El <strong>kirituhi</strong> es diseño de inspiración maorí, con la misma estética y técnica pero sin los elementos sagrados, pensado para personas sin ascendencia maorí.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Puedo hacerme un tā moko si no tengo ascendencia maorí?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">El tā moko propiamente dicho se reserva a personas con whakapapa maorí. Si no tienes ascendencia maorí, Tane diseña un <strong>kirituhi</strong>: una pieza igualmente personal y bella que respeta la cultura sin apropiarse de sus elementos tapu (sagrados).</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Duele mucho un tatuaje maorí?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">La técnica con máquina es similar a la de cualquier tatuaje; la intensidad depende de la zona y de tu umbral. Trabajamos con pausas, a tu ritmo y en un entorno tranquilo. Muchos clientes describen la sesión como una <strong>experiencia meditativa</strong> más que dolorosa.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cómo funciona el diseño personalizado?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Empezamos con una conversación (<strong>kōrero</strong>) sobre tu historia. Tane traduce tu whakapapa a símbolos maoríes y dibuja a mano un boceto único, que revisamos juntos sobre tu cuerpo antes de tatuar. Ningún diseño se repite en otra piel.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cuánto cuesta un tatuaje en TĀMOKO INK?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">La consulta y el diseño inicial son <strong>gratuitos</strong>. Una pieza pequeña parte de 180 €, una pieza grande desde 450 € y una manga completa (full sleeve) desde 1800 €, repartida en varias sesiones. Cada presupuesto se cierra tras la consulta.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cuánto tarda en curar y cómo cuido el tatuaje?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">La cicatrización superficial suele tardar de <strong>2 a 3 semanas</strong> y la completa hasta 2 meses. Entregamos una guía de cuidado posterior detallada y hacemos seguimiento: limpieza suave, hidratación específica, y nada de sol directo ni piscina hasta que cure.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cuántas sesiones necesitaré y cuánto duran?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Una pieza pequeña suele completarse en una sesión de <strong>1–3 h</strong>. Las composiciones grandes y las mangas se trabajan en varias sesiones de 3–5 h espaciadas para una cicatrización óptima.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" data-cursor>¿Cómo reservo una cita y dónde estáis?<span class="faq-ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Rellena el formulario de reserva o escríbenos por <strong>WhatsApp</strong>; Tane responde personalmente en 24–48 h. El estudio está en Carrer de la República, 47, 08100 Mollet del Vallès (Barcelona), de martes a sábado, 10:00–20:00, solo con cita previa.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2547,6 +2847,35 @@ textarea:focus-visible,[tabindex]:focus-visible{
       });
       el.addEventListener("mouseleave", function(){ el.style.transform = ""; });
     });
+  }
+
+  /* ---- FAQ accordion ---- */
+  var faqItems = document.querySelectorAll(".faq-item");
+  if(faqItems.length){
+    faqItems.forEach(function(item){
+      var q = item.querySelector(".faq-q");
+      var a = item.querySelector(".faq-a");
+      if(!q || !a) return;
+      q.addEventListener("click", function(){
+        var isOpen = item.classList.contains("open");
+        faqItems.forEach(function(o){
+          o.classList.remove("open");
+          var oa = o.querySelector(".faq-a");
+          var oq = o.querySelector(".faq-q");
+          if(oa) oa.style.maxHeight = null;
+          if(oq) oq.setAttribute("aria-expanded","false");
+        });
+        if(!isOpen){
+          item.classList.add("open");
+          a.style.maxHeight = a.scrollHeight + "px";
+          q.setAttribute("aria-expanded","true");
+        }
+      });
+    });
+    window.addEventListener("resize", function(){
+      var open = document.querySelector(".faq-item.open .faq-a");
+      if(open) open.style.maxHeight = open.scrollHeight + "px";
+    }, {passive:true});
   }
 
   /* ---- Footer year ---- */
