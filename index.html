@@ -352,6 +352,42 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   background:linear-gradient(120deg,var(--gold-soft),var(--gold) 55%,var(--jade-soft));
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .stat .lbl{margin-top:12px;color:var(--muted);font-size:.86rem;letter-spacing:.04em}
+
+/* ============================================================
+   ESTILOS
+   ============================================================ */
+.estilos{background:var(--black)}
+.styles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media (max-width:900px){ .styles-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:620px){ .styles-grid{grid-template-columns:1fr} }
+
+.style-card{
+  position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:var(--black-elev);min-height:380px;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:30px;isolation:isolate;
+  transition:transform .55s var(--ease),border-color .55s var(--ease);
+}
+.style-card:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.5)}
+.style-card .art{position:absolute;inset:0;z-index:-1;opacity:.85;
+  transition:transform .9s var(--ease),opacity .55s var(--ease)}
+.style-card:hover .art{transform:scale(1.08);opacity:1}
+.style-card .art svg{width:100%;height:100%}
+.style-card::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,.55) 55%,rgba(10,10,10,.94) 100%)}
+.style-card .idx{position:absolute;top:24px;left:30px;font-family:"Playfair Display",serif;
+  font-size:.82rem;letter-spacing:.2em;color:var(--gold);opacity:.8}
+.style-card h3{font-size:1.6rem;margin-bottom:4px}
+.style-card .mi{font-family:"Playfair Display",serif;font-style:italic;color:var(--gold);
+  font-size:.95rem;margin-bottom:12px}
+.style-card p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.style-card .more{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;
+  font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--white);
+  opacity:0;transform:translateY(8px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.style-card:hover .more{opacity:1;transform:none}
+.style-card .more svg{width:15px;height:15px}
+.style-card.feat{grid-column:span 2}
+@media (max-width:900px){ .style-card.feat{grid-column:span 2} }
+@media (max-width:620px){ .style-card.feat{grid-column:span 1} }
 </style>
 </head>
 <body>
@@ -534,6 +570,125 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
           <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Diseños únicos</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ESTILOS ============== -->
+<section class="section estilos" id="estilos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ngā momo · Los estilos</span>
+      <h2>Cinco lenguajes de una misma raíz</h2>
+      <p>Cada patrón maorí tiene su gramática y su significado. Estos son los estilos que Tane trabaja en el estudio.</p>
+    </div>
+
+    <div class="styles-grid">
+      <article class="style-card feat reveal" data-cursor>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="sg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1f3a33"/><stop offset=".55" stop-color="#0d1714"/><stop offset="1" stop-color="#1a1407"/>
+            </linearGradient></defs>
+            <rect width="600" height="380" fill="url(#sg1)"/>
+            <g fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round" opacity=".75">
+              <path d="M150 300 q-90 -10 -100 -110 q-8 -80 70 -96 q70 -14 86 56 q12 56 -40 70 q-42 10 -54 -28"/>
+              <path d="M300 320 q40 -120 -10 -200 q-30 -50 -100 -54"/>
+              <path d="M420 60 q70 30 80 130 q8 80 -70 100 q-70 16 -90 -56" />
+              <path d="M300 60 L340 30 L380 60 L420 30 L460 60 L500 30 L540 60"/>
+            </g>
+            <g fill="#c9a84c" opacity=".7"><circle cx="105" cy="190" r="4"/><circle cx="430" cy="180" r="4"/></g>
+          </svg>
+        </div>
+        <span class="idx">01</span>
+        <h3>Tā Moko</h3>
+        <div class="mi">Te tohu o te whakapapa</div>
+        <p>El tatuaje sagrado maorí, tradicionalmente facial y corporal. Reservado a personas con ascendencia maorí: cuenta el linaje, el estatus y la historia de quien lo porta. Diseño 100% ceremonial y personal.</p>
+        <span class="more">Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
+
+      <article class="style-card reveal" data-cursor>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 380" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2a2410"/><stop offset="1" stop-color="#0a0a0a"/>
+            </linearGradient></defs>
+            <rect width="360" height="380" fill="url(#sg2)"/>
+            <g fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round" opacity=".7">
+              <path d="M180 330 q-70 -16 -78 -120 q-6 -84 78 -100 q70 -12 84 60 q12 56 -42 70 q-44 10 -54 -30 q-7 -28 22 -36"/>
+            </g>
+            <circle cx="180" cy="204" r="4" fill="#c9a84c" opacity=".7"/>
+          </svg>
+        </div>
+        <span class="idx">02</span>
+        <h3>Kirituhi</h3>
+        <div class="mi">Arte para todos</div>
+        <p>Diseño de inspiración maorí para personas sin ascendencia maorí. Estética y técnica maorí con motivos personales, sin los elementos sagrados del tā moko.</p>
+        <span class="more">Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
+
+      <article class="style-card reveal" data-cursor>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 380" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="380" fill="#0d1714"/>
+            <g fill="none" stroke="#3f7d6c" stroke-width="2.4" stroke-linecap="round">
+              <path d="M180 340 q-110 -14 -120 -150 q-10 -110 110 -126 q92 -12 100 80 q6 70 -60 80 q-54 8 -58 -44 q-3 -34 30 -40"/>
+            </g>
+            <circle cx="180" cy="206" r="5" fill="#3f7d6c"/>
+          </svg>
+        </div>
+        <span class="idx">03</span>
+        <h3>Koru</h3>
+        <div class="mi">Te kōrari</div>
+        <p>La espiral del helecho que se desenrolla: símbolo de vida nueva, crecimiento, paz y un eterno volver a empezar. El motivo más esencial del repertorio maorí.</p>
+        <span class="more">Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
+
+      <article class="style-card reveal" data-cursor>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 380" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="380" fill="#1a1407"/>
+            <g fill="none" stroke="#c9a84c" stroke-width="2.4" stroke-linecap="round" opacity=".75">
+              <path d="M40 80 L120 190 L40 300"/><path d="M120 80 L200 190 L120 300"/>
+              <path d="M200 80 L280 190 L200 300"/><path d="M280 80 L340 170"/>
+            </g>
+          </svg>
+        </div>
+        <span class="idx">04</span>
+        <h3>Mangōpare</h3>
+        <div class="mi">El tiburón martillo</div>
+        <p>Patrón angular que evoca al hammerhead: fuerza, determinación y tenacidad ante la adversidad. Ideal para piezas de brazo y pierna con carácter.</p>
+        <span class="more">Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
+
+      <article class="style-card reveal" data-cursor>
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 360 380" preserveAspectRatio="xMidYMid slice">
+            <rect width="360" height="380" fill="#13231f"/>
+            <g fill="none" stroke="#c9a84c" stroke-width="2.2" stroke-linecap="round" opacity=".7">
+              <path d="M0 120 q90 -70 180 0 q90 70 180 0"/>
+              <path d="M0 200 q90 -70 180 0 q90 70 180 0"/>
+              <path d="M0 280 q90 -70 180 0 q90 70 180 0"/>
+            </g>
+            <g fill="#c9a84c" opacity=".6"><circle cx="90" cy="160" r="4"/><circle cx="270" cy="160" r="4"/><circle cx="180" cy="240" r="4"/></g>
+          </svg>
+        </div>
+        <span class="idx">05</span>
+        <h3>Kōwhaiwhai</h3>
+        <div class="mi">Ritmo y linaje</div>
+        <p>Patrones curvos en cadena, inspirados en las vigas pintadas de la wharenui. Hablan de continuidad, comunidad y la conexión entre generaciones.</p>
+        <span class="more">Saber más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </article>
     </div>
   </div>
 </section>
