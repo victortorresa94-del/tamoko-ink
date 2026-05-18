@@ -474,6 +474,69 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   gap:14px;color:var(--muted);font-size:.95rem;text-align:center}
 .trating b{color:var(--white);font-family:"Playfair Display",serif;font-size:1.3rem}
 .trating .dot{width:4px;height:4px;border-radius:50%;background:var(--muted-dim)}
+
+/* ============================================================
+   RESERVAS
+   ============================================================ */
+.reservas{background:var(--black);position:relative;overflow:hidden}
+.reservas .glow{position:absolute;width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.14),transparent 70%);
+  bottom:-220px;left:-160px;pointer-events:none}
+.res-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start}
+@media (max-width:900px){ .res-grid{grid-template-columns:1fr;gap:48px} }
+.res-aside h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:20px 0 20px}
+.res-aside p{color:var(--muted);margin-bottom:32px}
+.res-info{display:flex;flex-direction:column;gap:22px;margin-top:8px}
+.res-info li{display:flex;gap:16px;align-items:flex-start}
+.res-info .ri-ic{width:42px;height:42px;border-radius:12px;flex:none;display:grid;place-items:center;
+  background:rgba(201,168,76,.10);border:1px solid rgba(201,168,76,.25);color:var(--gold)}
+.res-info .ri-ic svg{width:19px;height:19px}
+.res-info b{display:block;font-family:"Inter";font-weight:600;font-size:.96rem}
+.res-info span{color:var(--muted);font-size:.92rem}
+
+.res-form{
+  border:1px solid var(--line);border-radius:22px;padding:40px;
+  background:rgba(255,255,255,.018);
+}
+@media (max-width:560px){ .res-form{padding:28px 22px} }
+.fr{margin-bottom:22px}
+.fr-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:480px){ .fr-2{grid-template-columns:1fr} }
+.res-form label{display:block;font-size:.8rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.res-form label .req{color:var(--gold)}
+.res-form input,.res-form select,.res-form textarea{
+  width:100%;background:var(--black-elev);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;color:var(--white);font-family:inherit;
+  font-size:.96rem;transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.res-form textarea{resize:vertical;min-height:120px}
+.res-form input:focus,.res-form select:focus,.res-form textarea:focus{
+  outline:none;border-color:var(--gold);background:rgba(201,168,76,.04)}
+.res-form input::placeholder,.res-form textarea::placeholder{color:var(--muted-dim)}
+.res-form .err{display:none;color:#e88;font-size:.8rem;margin-top:7px}
+.res-form .fr.invalid input,.res-form .fr.invalid select,.res-form .fr.invalid textarea{
+  border-color:#c45}
+.res-form .fr.invalid .err{display:block}
+.res-submit{
+  width:100%;display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  background:var(--gold);color:var(--black);font-weight:700;font-size:.98rem;
+  padding:17px;border-radius:999px;letter-spacing:.02em;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease);
+}
+.res-submit:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(201,168,76,.65);background:var(--gold-soft)}
+.res-submit svg{width:17px;height:17px}
+.res-note{margin-top:16px;font-size:.82rem;color:var(--muted-dim);text-align:center}
+.form-ok{
+  display:none;text-align:center;padding:30px 10px;
+}
+.form-ok.show{display:block;animation:hero-up .7s var(--ease) forwards;opacity:0}
+.form-ok .ok-ic{width:64px;height:64px;border-radius:50%;margin:0 auto 20px;
+  display:grid;place-items:center;background:rgba(45,90,78,.25);
+  border:1px solid var(--jade-soft);color:var(--gold-soft)}
+.form-ok .ok-ic svg{width:28px;height:28px}
+.form-ok h3{font-size:1.5rem;margin-bottom:10px}
+.form-ok p{color:var(--muted);font-size:.96rem}
 </style>
 </head>
 <body>
@@ -1071,6 +1134,105 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   </div>
 </section>
 
+<!-- ============== RESERVAS ============== -->
+<section class="section reservas" id="reservas">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="res-grid">
+      <div class="res-aside reveal">
+        <span class="eyebrow">Tono mai · Reserva</span>
+        <h2>Empecemos a contar tu historia</h2>
+        <p>Cuéntanos qué tienes en mente. Tane revisa personalmente cada solicitud y responde en 24–48&nbsp;h para agendar una consulta sin compromiso.</p>
+        <ul class="res-info">
+          <li>
+            <span class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><b>El estudio</b><span>Carrer de la República, 47 · 08100 Mollet del Vallès, Barcelona</span></div>
+          </li>
+          <li>
+            <span class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z" stroke-linejoin="round"/><path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b>Email</b><span>kiaora@tamoko-ink.cat</span></div>
+          </li>
+          <li>
+            <span class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3l3 1 1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5 1 3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z" stroke-linejoin="round"/></svg></span>
+            <div><b>Teléfono / WhatsApp</b><span>+34 936 00 14 47</span></div>
+          </li>
+          <li>
+            <span class="ri-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b>Horario</b><span>Mar–Sáb · 10:00–20:00 (solo con cita previa)</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <form class="res-form" id="resForm" novalidate>
+          <div class="fr-2">
+            <div class="fr">
+              <label for="f-name">Nombre <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" placeholder="Tu nombre completo" autocomplete="name" />
+              <div class="err">Indícanos tu nombre, por favor.</div>
+            </div>
+            <div class="fr">
+              <label for="f-email">Email <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" placeholder="tu@email.com" autocomplete="email" />
+              <div class="err">Introduce un email válido.</div>
+            </div>
+          </div>
+
+          <div class="fr-2">
+            <div class="fr">
+              <label for="f-phone">Teléfono</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="+34 600 000 000" autocomplete="tel" />
+              <div class="err">Revisa el número de teléfono.</div>
+            </div>
+            <div class="fr">
+              <label for="f-style">Estilo de interés <span class="req">*</span></label>
+              <select id="f-style" name="style">
+                <option value="">Selecciona…</option>
+                <option>Tā moko (ascendencia maorí)</option>
+                <option>Kirituhi (inspiración maorí)</option>
+                <option>Koru</option>
+                <option>Mangōpare</option>
+                <option>Kōwhaiwhai</option>
+                <option>Aún no lo sé / asesoramiento</option>
+              </select>
+              <div class="err">Elige un estilo o pide asesoramiento.</div>
+            </div>
+          </div>
+
+          <div class="fr-2">
+            <div class="fr">
+              <label for="f-zone">Zona del cuerpo</label>
+              <input type="text" id="f-zone" name="zone" placeholder="Brazo, espalda, pierna…" />
+            </div>
+            <div class="fr">
+              <label for="f-date">Fecha aproximada</label>
+              <input type="date" id="f-date" name="date" />
+            </div>
+          </div>
+
+          <div class="fr">
+            <label for="f-msg">Tu historia <span class="req">*</span></label>
+            <textarea id="f-msg" name="message" placeholder="Cuéntanos qué quieres honrar, tu historia, tamaño aproximado y cualquier referencia que tengas en mente…"></textarea>
+            <div class="err">Cuéntanos un poco sobre lo que buscas (mín. 15 caracteres).</div>
+          </div>
+
+          <button type="submit" class="res-submit" data-cursor>
+            Enviar solicitud
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="res-note">Al enviar aceptas que TĀMOKO INK te contacte sobre tu consulta. No compartimos tus datos.</p>
+        </form>
+
+        <div class="form-ok" id="formOk">
+          <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Kia ora, gracias por escribir</h3>
+          <p>Hemos recibido tu solicitud. Tane revisará tu historia y te responderá personalmente en 24–48&nbsp;horas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== [SECCIONES SIGUIENTES SE AÑADIRÁN AQUÍ] ============== -->
 
 </main>
@@ -1191,6 +1353,67 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
       });
     }, {threshold:0.6});
     counters.forEach(function(c){ cio.observe(c); });
+  }
+
+  /* ---- Reservation form validation ---- */
+  var form = document.getElementById("resForm");
+  if(form){
+    var ok = document.getElementById("formOk");
+    function setInvalid(id, bad){
+      var fr = document.getElementById(id);
+      if(fr) fr.closest(".fr").classList.toggle("invalid", bad);
+      return !bad;
+    }
+    function validate(){
+      var v = true;
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var phone = form.phone.value.trim();
+      var style = form.style.value;
+      var msg = form.message.value.trim();
+      v &= setInvalid("f-name", name.length < 2);
+      v &= setInvalid("f-email", !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+      v &= setInvalid("f-phone", phone !== "" && !/^[+0-9()\s-]{6,}$/.test(phone));
+      v &= setInvalid("f-style", style === "");
+      v &= setInvalid("f-msg", msg.length < 15);
+      return !!v;
+    }
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      if(!validate()){
+        var firstBad = form.querySelector(".fr.invalid input,.fr.invalid select,.fr.invalid textarea");
+        if(firstBad) firstBad.focus();
+        return;
+      }
+      form.style.display = "none";
+      if(ok){
+        ok.classList.add("show");
+        ok.scrollIntoView({behavior: rm ? "auto":"smooth", block:"center"});
+      }
+    });
+    ["f-name","f-email","f-phone","f-style","f-msg"].forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.addEventListener("input", function(){
+        var fr = el.closest(".fr");
+        if(fr && fr.classList.contains("invalid")) validate();
+      });
+    });
+  }
+
+  /* ---- Active nav link on scroll ---- */
+  var sections = document.querySelectorAll("main section[id]");
+  var navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+  if(sections.length && navAnchors.length){
+    var sio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          navAnchors.forEach(function(a){
+            a.style.color = a.getAttribute("href") === "#"+en.target.id ? "var(--white)" : "";
+          });
+        }
+      });
+    }, {threshold:0.5});
+    sections.forEach(function(s){ sio.observe(s); });
   }
 
   /* ---- Back to top ---- */
