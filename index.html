@@ -1017,7 +1017,48 @@ textarea:focus-visible,[tabindex]:focus-visible{
 @media (max-width:560px){ .wa-float{left:18px;bottom:18px;height:50px;padding:0 13px} }
 @media (prefers-reduced-motion:reduce){
   .style-card::before,.tcard::before,.tile::after,.step::before{display:none}
+  .hero-art .spin-slow,.hero-art .spin-rev,.hero-art .pulse,.hero-particles i{animation:none}
+  .hero h1 .line-i{clip-path:inset(0 0 -10% 0);transform:none;animation:none}
 }
+
+/* ============================================================
+   FILOSOFÍA
+   ============================================================ */
+.filosofia{
+  position:relative;overflow:hidden;padding:170px 0;
+  background:linear-gradient(180deg,var(--black),#0b1310 50%,var(--black));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.phil-pat{position:absolute;inset:0;opacity:.05;pointer-events:none}
+.phil-pat svg{width:100%;height:100%}
+.phil-glow{position:absolute;width:760px;height:760px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,90,78,.18),transparent 68%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.phil-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:center}
+.phil-kicker{justify-content:center}
+.phil-quote{
+  font-family:"Playfair Display",serif;font-weight:600;font-style:italic;
+  font-size:clamp(1.9rem,4.6vw,3.5rem);line-height:1.28;letter-spacing:-.01em;
+  margin:30px 0 34px;color:var(--white);
+}
+.phil-quote .gold{
+  font-style:normal;
+  background:linear-gradient(120deg,var(--gold-soft),var(--gold) 55%,var(--jade-soft));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.phil-reo{
+  font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.15rem,2.4vw,1.6rem);
+  color:var(--gold);margin:0 auto 10px;max-width:760px;
+}
+.phil-reo-t{color:var(--muted);font-size:1rem;max-width:620px;margin:0 auto 40px}
+.phil-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;
+  margin-top:60px;text-align:left;border-top:1px solid var(--line);padding-top:48px}
+@media (max-width:760px){ .phil-cols{grid-template-columns:1fr;gap:32px} }
+.phil-col h3{font-family:"Inter";font-weight:600;font-size:1.05rem;letter-spacing:0;margin-bottom:10px}
+.phil-col .reo{color:var(--gold);font-family:"Playfair Display",serif;font-style:italic;
+  font-size:.92rem;margin-bottom:8px;display:block}
+.phil-col p{color:var(--muted);font-size:.95rem;margin:0}
+@media (max-width:560px){ .filosofia{padding:110px 0} }
 </style>
 </head>
 <body>
@@ -1222,6 +1263,48 @@ textarea:focus-visible,[tabindex]:focus-visible{
   <a href="#filosofia" class="hero-scroll" aria-label="Desliza para descubrir más">Desliza<i></i></a>
 </section>
 
+<!-- ============== FILOSOFÍA ============== -->
+<section class="filosofia" id="filosofia">
+  <div class="phil-pat" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="#c9a84c" stroke-width="2">
+        <path d="M-20 150 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+        <path d="M-20 300 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+        <path d="M-20 450 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+      </g>
+    </svg>
+  </div>
+  <div class="phil-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="phil-inner">
+      <span class="eyebrow phil-kicker reveal">Te kaupapa · La filosofía</span>
+      <blockquote class="phil-quote reveal">
+        Un tā moko no se diseña: se <span class="gold">escucha</span>. Antes de que la tinta toque la piel, escuchamos tu <span class="gold">whakapapa</span> —tu linaje, tus pérdidas, tu fuerza— y dejamos que la mano traduzca lo que las palabras no alcanzan.
+      </blockquote>
+      <p class="phil-reo reveal">«He toi whakairo, he mana tangata.»</p>
+      <p class="phil-reo-t reveal">Donde hay arte tallado con maestría, hay dignidad humana. — Whakataukī (proverbio maorí)</p>
+
+      <div class="phil-cols">
+        <div class="phil-col reveal">
+          <span class="reo">Whakapapa</span>
+          <h3>Linaje antes que estética</h3>
+          <p>Cada símbolo responde a una historia real. El diseño nace de quién eres, no de una tendencia: por eso ninguna pieza se repite jamás.</p>
+        </div>
+        <div class="phil-col reveal">
+          <span class="reo">Mana</span>
+          <h3>Respeto cultural</h3>
+          <p>Distinguimos el tā moko sagrado del kirituhi para honrar la cultura maorí sin apropiarnos de lo que es tapu. El respeto es innegociable.</p>
+        </div>
+        <div class="phil-col reveal">
+          <span class="reo">Mahi toi</span>
+          <h3>Oficio a mano</h3>
+          <p>Bocetado y tatuado a mano, sin plantillas. Cuatro generaciones de conocimiento guían cada línea sobre tu piel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== ABOUT ============== -->
 <section class="section about" id="about">
   <div class="container">
@@ -1230,27 +1313,71 @@ textarea:focus-visible,[tabindex]:focus-visible{
         <div class="pbg"></div>
         <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <defs>
-            <linearGradient id="abFace" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#c9a84c" stop-opacity=".9"/>
-              <stop offset="1" stop-color="#2d5a4e" stop-opacity=".7"/>
+            <linearGradient id="abSkin" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3a2c14"/><stop offset=".5" stop-color="#241a0c"/><stop offset="1" stop-color="#101813"/>
             </linearGradient>
+            <linearGradient id="abMoko" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e3c879"/><stop offset=".55" stop-color="#c9a84c"/><stop offset="1" stop-color="#3f7d6c"/>
+            </linearGradient>
+            <radialGradient id="abGlow" cx="50%" cy="42%" r="58%">
+              <stop offset="0" stop-color="#c9a84c" stop-opacity=".28"/><stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+            </radialGradient>
           </defs>
-          <g fill="none" stroke="url(#abFace)" stroke-width="2" stroke-linecap="round">
-            <ellipse cx="200" cy="215" rx="118" ry="150" opacity=".5"/>
-            <!-- ta moko facial spirals -->
-            <path d="M150 150 q-44 26 -30 86 q10 44 56 36 q34 -6 26 -44 q-6 -26 -34 -20"/>
-            <path d="M250 150 q44 26 30 86 q-10 44 -56 36 q-34 -6 -26 -44 q6 -26 34 -20"/>
-            <path d="M200 250 q-30 30 -10 86 q14 40 10 70"/>
-            <path d="M200 250 q30 30 10 86 q-14 40 -10 70"/>
-            <path d="M120 250 q-24 50 6 110" opacity=".7"/>
-            <path d="M280 250 q24 50 -6 110" opacity=".7"/>
-            <path d="M165 120 q35 -22 70 0" />
-            <path d="M150 330 q50 34 100 0"/>
+          <rect width="400" height="500" fill="url(#abSkin)"/>
+          <ellipse cx="200" cy="225" rx="210" ry="240" fill="url(#abGlow)"/>
+
+          <!-- head / face silhouette -->
+          <path d="M200 70 q92 0 108 110 q10 70 -14 150 q-20 86 -94 116 q-74 -30 -94 -116 q-24 -80 -14 -150 q16 -110 108 -110 Z"
+                fill="none" stroke="url(#abMoko)" stroke-width="2.2" opacity=".5"/>
+
+          <g fill="none" stroke="url(#abMoko)" stroke-linecap="round" stroke-linejoin="round">
+            <!-- tītī — forehead spirals -->
+            <g stroke-width="3">
+              <path d="M200 96 q40 26 0 70 q-36 30 0 60"/>
+              <path d="M150 112 q-30 30 -22 78 q6 36 40 30"/>
+              <path d="M250 112 q30 30 22 78 q-6 36 -40 30"/>
+            </g>
+            <!-- brow ridge -->
+            <g stroke-width="2.6">
+              <path d="M152 196 q40 -22 44 8 M248 196 q-40 -22 -44 8"/>
+            </g>
+            <!-- pūkauae — cheek koru spirals -->
+            <g stroke-width="3.2">
+              <path d="M150 214 q-46 28 -36 100 q12 52 64 42 q38 -8 28 -50 q-8 -30 -38 -22 q-20 6 -14 28"/>
+              <path d="M250 214 q46 28 36 100 q-12 52 -64 42 q-38 -8 -28 -50 q8 -30 38 -22 q20 6 14 28"/>
+            </g>
+            <!-- kōwhaiwhai — cheek curl detail -->
+            <g stroke-width="2" opacity=".7">
+              <path d="M120 250 q-26 56 4 120 q14 30 36 36"/>
+              <path d="M280 250 q26 56 -4 120 q-14 30 -36 36"/>
+              <path d="M132 300 q-14 36 8 70 M268 300 q14 36 -8 70"/>
+            </g>
+            <!-- nose — rauponga ridge lines -->
+            <g stroke-width="2.4">
+              <path d="M200 200 q-12 60 -6 120 M200 200 q12 60 6 120"/>
+              <path d="M188 326 q12 14 24 0"/>
+            </g>
+            <!-- eyes suggestion -->
+            <g stroke-width="2.6" opacity=".85">
+              <path d="M160 212 q22 -14 42 2 M240 212 q-22 -14 -42 2"/>
+            </g>
+            <!-- mouth -->
+            <path d="M168 372 q32 22 64 0" stroke-width="2.8"/>
+            <!-- kauae — chin moko -->
+            <g stroke-width="2.6">
+              <path d="M172 398 q28 18 56 0"/>
+              <path d="M178 416 q22 16 44 0"/>
+              <path d="M186 434 q14 12 28 0"/>
+              <path d="M200 392 v62" opacity=".7"/>
+              <path d="M186 392 q-6 32 4 62 M214 392 q6 32 -4 62" opacity=".7"/>
+            </g>
           </g>
-          <g fill="#c9a84c">
-            <circle cx="150" cy="150" r="3"/><circle cx="250" cy="150" r="3"/>
-            <circle cx="200" cy="250" r="3"/>
+
+          <g fill="url(#abMoko)">
+            <circle cx="200" cy="130" r="4"/><circle cx="150" cy="262" r="4.5"/><circle cx="250" cy="262" r="4.5"/>
+            <circle cx="200" cy="300" r="3"/><circle cx="200" cy="454" r="3"/>
           </g>
+          <ellipse cx="200" cy="240" rx="118" ry="172" fill="none" stroke="url(#abMoko)" stroke-width="1.4" opacity=".3"/>
         </svg>
         <div class="ptag"><b>El Artista</b>Tane Wiremu · Aotearoa → Catalunya</div>
       </div>
