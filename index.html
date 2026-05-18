@@ -4,13 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0a0a0a" />
-<title>TĀMOKO INK — Estudio de Tatuaje Maorí · Mollet del Vallès</title>
-<meta name="description" content="TĀMOKO INK · Estudio de tatuaje maorí de Tane Wiremu en Mollet del Vallès, Barcelona. Ta moko tradicional y Kirituhi contemporáneo. Cada línea cuenta una historia." />
+<title>TĀMOKO INK — Estudio de Tatuaje Maorí en Mollet del Vallès, Barcelona | Tā moko & Kirituhi</title>
+<meta name="description" content="Estudio de tatuaje maorí de Tane Wiremu, tohunga tā moko de Aotearoa, en Mollet del Vallès (Barcelona). Tā moko tradicional, kirituhi, koru y mangōpare tatuados a mano con respeto cultural. Consulta gratuita." />
 <meta name="author" content="Tane Wiremu" />
 <meta name="keywords" content="tatuaje maorí, ta moko, kirituhi, koru, tatuador maorí Barcelona, Mollet del Vallès, Tane Wiremu, tatuaje tradicional maorí, estudio tatuaje Vallès" />
 <meta name="robots" content="index, follow" />
 <meta name="language" content="es" />
+<meta name="rating" content="general" />
+<meta name="revisit-after" content="7 days" />
 <link rel="canonical" href="https://tamoko-ink.cat/" />
+<link rel="alternate" hreflang="es" href="https://tamoko-ink.cat/" />
+<link rel="alternate" hreflang="ca" href="https://tamoko-ink.cat/ca/" />
+<link rel="alternate" hreflang="en" href="https://tamoko-ink.cat/en/" />
+<link rel="alternate" hreflang="x-default" href="https://tamoko-ink.cat/" />
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22T%C4%80MOKO%20INK%22%2C%22short_name%22%3A%22T%C4%80MOKO%22%2C%22start_url%22%3A%22%2F%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230a0a0a%22%2C%22theme_color%22%3A%22%230a0a0a%22%7D" />
 
 <meta property="og:title" content="TĀMOKO INK — Estudio de Tatuaje Maorí" />
 <meta property="og:description" content="Ta moko tradicional y Kirituhi en Mollet del Vallès, Barcelona. Cada línea cuenta una historia." />
@@ -42,19 +49,122 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"TattooParlor",
-  "name":"TĀMOKO INK",
-  "description":"Estudio de tatuaje maorí de Tane Wiremu. Ta moko tradicional y Kirituhi contemporáneo en Mollet del Vallès, Barcelona.",
-  "image":"https://tamoko-ink.cat/og.jpg",
-  "url":"https://tamoko-ink.cat",
-  "telephone":"+34936001447",
-  "email":"kiaora@tamoko-ink.cat",
-  "priceRange":"€€€",
-  "founder":{"@type":"Person","name":"Tane Wiremu","jobTitle":"Tohunga tā moko"},
-  "address":{"@type":"PostalAddress","streetAddress":"Carrer de la República, 47","addressLocality":"Mollet del Vallès","postalCode":"08100","addressRegion":"Barcelona","addressCountry":"ES"},
-  "geo":{"@type":"GeoCoordinates","latitude":41.5403,"longitude":2.2130},
-  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"},
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"240"}
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://tamoko-ink.cat/#website",
+      "url":"https://tamoko-ink.cat/",
+      "name":"TĀMOKO INK",
+      "description":"Estudio de tatuaje maorí en Mollet del Vallès, Barcelona.",
+      "inLanguage":["es","ca","en"],
+      "publisher":{"@id":"https://tamoko-ink.cat/#studio"},
+      "potentialAction":{
+        "@type":"SearchAction",
+        "target":{"@type":"EntryPoint","urlTemplate":"https://tamoko-ink.cat/?q={search_term_string}"},
+        "query-input":"required name=search_term_string"
+      }
+    },
+    {
+      "@type":["TattooParlor","LocalBusiness"],
+      "@id":"https://tamoko-ink.cat/#studio",
+      "name":"TĀMOKO INK",
+      "description":"Estudio de tatuaje maorí de Tane Wiremu, tohunga tā moko de Aotearoa. Tā moko tradicional y kirituhi contemporáneo tatuados a mano con respeto cultural en Mollet del Vallès, Barcelona.",
+      "image":"https://tamoko-ink.cat/og.jpg",
+      "logo":"https://tamoko-ink.cat/og.jpg",
+      "url":"https://tamoko-ink.cat/",
+      "telephone":"+34936001447",
+      "email":"kiaora@tamoko-ink.cat",
+      "priceRange":"€€-€€€€",
+      "currenciesAccepted":"EUR",
+      "paymentAccepted":"Efectivo, Tarjeta, Bizum",
+      "founder":{"@id":"https://tamoko-ink.cat/#tane"},
+      "employee":{"@id":"https://tamoko-ink.cat/#tane"},
+      "knowsLanguage":["es","ca","en","mi"],
+      "areaServed":[{"@type":"City","name":"Mollet del Vallès"},{"@type":"City","name":"Barcelona"},{"@type":"AdministrativeArea","name":"Vallès Oriental"},{"@type":"Country","name":"España"}],
+      "address":{"@type":"PostalAddress","streetAddress":"Carrer de la República, 47","addressLocality":"Mollet del Vallès","postalCode":"08100","addressRegion":"Barcelona","addressCountry":"ES"},
+      "geo":{"@type":"GeoCoordinates","latitude":41.5403,"longitude":2.2130},
+      "hasMap":"https://www.google.com/maps?q=Carrer+de+la+Rep%C3%BAblica+47+Mollet+del+Vall%C3%A8s",
+      "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"},
+      "sameAs":["https://www.instagram.com/tamokoink","https://www.facebook.com/tamokoink","https://www.tiktok.com/@tamokoink"],
+      "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"240","bestRating":"5"},
+      "makesOffer":[
+        {"@type":"Offer","name":"Consulta y diseño","price":"0","priceCurrency":"EUR","description":"Primera consulta y conceptualización del diseño sin compromiso."},
+        {"@type":"Offer","name":"Pieza pequeña","price":"180","priceCurrency":"EUR","description":"Koru, símbolo o motivo personal de pequeño formato."},
+        {"@type":"Offer","name":"Pieza grande","price":"450","priceCurrency":"EUR","description":"Composición de brazo, pierna o pecho a medida."},
+        {"@type":"Offer","name":"Full sleeve","price":"1800","priceCurrency":"EUR","description":"Manga completa o pieza corporal extensa multisesión."}
+      ]
+    },
+    {
+      "@type":"Person",
+      "@id":"https://tamoko-ink.cat/#tane",
+      "name":"Tane Wiremu",
+      "jobTitle":"Tohunga tā moko",
+      "description":"Artista maorí nacido en Auckland (Aotearoa), bisnieto de un tohunga tā moko. Lleva más de 15 años tatuando y desde 2014 dirige TĀMOKO INK en Mollet del Vallès.",
+      "nationality":{"@type":"Country","name":"Nueva Zelanda"},
+      "worksFor":{"@id":"https://tamoko-ink.cat/#studio"},
+      "knowsAbout":["tā moko","kirituhi","koru","mangōpare","kōwhaiwhai","puhoro","cultura maorí","whakapapa","tatuaje tradicional"],
+      "knowsLanguage":["mi","en","es","ca"]
+    },
+    {
+      "@type":"Service",
+      "@id":"https://tamoko-ink.cat/#service",
+      "serviceType":"Tatuaje maorí — tā moko y kirituhi",
+      "provider":{"@id":"https://tamoko-ink.cat/#studio"},
+      "areaServed":{"@type":"Country","name":"España"},
+      "audience":{"@type":"Audience","audienceType":"Personas que buscan tatuaje maorí con significado cultural"},
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog","name":"Estilos de tatuaje maorí",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tā moko","description":"Tatuaje maorí sagrado para personas con ascendencia maorí."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Kirituhi","description":"Diseño de inspiración maorí para personas sin ascendencia maorí."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Koru, mangōpare y kōwhaiwhai","description":"Motivos tradicionales maoríes adaptados a cada cuerpo e historia."}}
+        ]
+      }
+    },
+    {
+      "@type":"VisualArtwork",
+      "@id":"https://tamoko-ink.cat/#artwork",
+      "name":"Tā moko personalizado",
+      "artform":"Tatuaje tradicional maorí (tā moko)",
+      "artMedium":"Tinta sobre piel",
+      "creator":{"@id":"https://tamoko-ink.cat/#tane"},
+      "description":"Cada pieza de TĀMOKO INK es una obra única dibujada a mano que narra el whakapapa —el linaje y la historia— de quien la lleva."
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://tamoko-ink.cat/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"¿Cuál es la diferencia entre tā moko y kirituhi?","acceptedAnswer":{"@type":"Answer","text":"El tā moko es el tatuaje maorí sagrado, reservado a personas con ascendencia maorí: codifica el whakapapa (linaje), el estatus y la historia personal. El kirituhi es diseño de inspiración maorí, con la misma estética y técnica pero sin los elementos sagrados, pensado para personas sin ascendencia maorí."}},
+        {"@type":"Question","name":"¿Puedo hacerme un tā moko si no tengo ascendencia maorí?","acceptedAnswer":{"@type":"Answer","text":"El tā moko propiamente dicho se reserva a personas con whakapapa maorí. Si no tienes ascendencia maorí, Tane diseña un kirituhi: una pieza igualmente personal y bella que respeta la cultura sin apropiarse de sus elementos tapu (sagrados)."}},
+        {"@type":"Question","name":"¿Duele mucho un tatuaje maorí?","acceptedAnswer":{"@type":"Answer","text":"La técnica con máquina es similar a cualquier tatuaje; la intensidad depende de la zona y de tu umbral. Trabajamos con pausas, a tu ritmo y en un entorno tranquilo. Muchos clientes describen la sesión como una experiencia meditativa más que dolorosa."}},
+        {"@type":"Question","name":"¿Cómo funciona el diseño personalizado?","acceptedAnswer":{"@type":"Answer","text":"Empezamos con una conversación (kōrero) sobre tu historia. Tane traduce tu whakapapa a símbolos maoríes y dibuja a mano un boceto único, que revisamos juntos sobre tu cuerpo antes de tatuar. Ningún diseño se repite en otra piel."}},
+        {"@type":"Question","name":"¿Cuánto cuesta un tatuaje en TĀMOKO INK?","acceptedAnswer":{"@type":"Answer","text":"La consulta y el diseño inicial son gratuitos. Una pieza pequeña parte de 180 €, una pieza grande desde 450 € y una manga completa (full sleeve) desde 1800 €, repartida en varias sesiones. Cada presupuesto se cierra tras la consulta."}},
+        {"@type":"Question","name":"¿Cuánto tarda en curar y cómo cuido el tatuaje?","acceptedAnswer":{"@type":"Answer","text":"La cicatrización superficial suele tardar de 2 a 3 semanas y la completa hasta 2 meses. Entregamos una guía de cuidado posterior detallada y hacemos seguimiento: limpieza suave, hidratación específica, nada de sol directo ni piscina hasta que cure."}},
+        {"@type":"Question","name":"¿Cuántas sesiones necesitaré y cuánto duran?","acceptedAnswer":{"@type":"Answer","text":"Una pieza pequeña suele completarse en una sesión de 1–3 h. Las composiciones grandes y las mangas se trabajan en varias sesiones de 3–5 h espaciadas para una cicatrización óptima."}},
+        {"@type":"Question","name":"¿Cómo reservo una cita y dónde estáis?","acceptedAnswer":{"@type":"Answer","text":"Rellena el formulario de reserva o escríbenos por WhatsApp; Tane responde personalmente en 24–48 h. El estudio está en Carrer de la República, 47, 08100 Mollet del Vallès (Barcelona), de martes a sábado, 10:00–20:00, solo con cita previa."}}
+      ]
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://tamoko-ink.cat/#breadcrumb",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Inicio","item":"https://tamoko-ink.cat/"},
+        {"@type":"ListItem","position":2,"name":"Estilos","item":"https://tamoko-ink.cat/#estilos"},
+        {"@type":"ListItem","position":3,"name":"Precios","item":"https://tamoko-ink.cat/#precios"},
+        {"@type":"ListItem","position":4,"name":"Reservas","item":"https://tamoko-ink.cat/#reservas"}
+      ]
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://tamoko-ink.cat/#webpage",
+      "url":"https://tamoko-ink.cat/",
+      "name":"TĀMOKO INK — Estudio de Tatuaje Maorí en Mollet del Vallès",
+      "isPartOf":{"@id":"https://tamoko-ink.cat/#website"},
+      "about":{"@id":"https://tamoko-ink.cat/#studio"},
+      "inLanguage":"es",
+      "speakable":{"@type":"SpeakableSpecification","cssSelector":["#filosofia .phil-quote",".hero-tag","#ta-moko-historia h2","#ta-moko-historia p"]}
+    }
+  ]
 }
 </script>
 
