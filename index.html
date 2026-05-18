@@ -15,6 +15,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%230a0a0a'/%3E%3Cpath d='M24 7C13 7 7 14 7 24s7 17 17 17c7 0 13-4 16-11-4 4-8 5-13 5-8 0-14-6-14-13S19 12 26 12c4 0 8 2 10 5-2-6-7-10-12-10Z' fill='%23c9a84c'/%3E%3Ccircle cx='28' cy='24' r='4.5' fill='%23c9a84c'/%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230a0a0a'/%3E%3Cpath d='M24 7C13 7 7 14 7 24s7 17 17 17c7 0 13-4 16-11-4 4-8 5-13 5-8 0-14-6-14-13S19 12 26 12c4 0 8 2 10 5-2-6-7-10-12-10Z' fill='%23c9a84c'/%3E%3Ccircle cx='28' cy='24' r='4.5' fill='%23c9a84c'/%3E%3C/svg%3E" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TattooParlor",
+  "name":"TĀMOKO INK",
+  "description":"Estudio de tatuaje maorí de Tane Wiremu. Ta moko tradicional y Kirituhi contemporáneo en Mollet del Vallès, Barcelona.",
+  "image":"https://tamoko-ink.cat/og.jpg",
+  "url":"https://tamoko-ink.cat",
+  "telephone":"+34936001447",
+  "email":"kiaora@tamoko-ink.cat",
+  "priceRange":"€€€",
+  "founder":{"@type":"Person","name":"Tane Wiremu","jobTitle":"Tohunga tā moko"},
+  "address":{"@type":"PostalAddress","streetAddress":"Carrer de la República, 47","addressLocality":"Mollet del Vallès","postalCode":"08100","addressRegion":"Barcelona","addressCountry":"ES"},
+  "geo":{"@type":"GeoCoordinates","latitude":41.5403,"longitude":2.2130},
+  "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"20:00"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"240"}
+}
+</script>
+
 <style>
 /* ============================================================
    TĀMOKO INK — Single-file site
@@ -247,9 +269,19 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
   opacity:0;transform:translateY(20px);animation:hero-up 1s var(--ease) 1.05s forwards;
 }
 .hero-tag .mi{color:var(--gold)}
+.hero-mihi{
+  margin-top:22px;display:flex;flex-direction:column;gap:5px;
+  padding-left:20px;border-left:2px solid rgba(201,168,76,.45);
+  opacity:0;transform:translateY(20px);animation:hero-up 1s var(--ease) 1.12s forwards;
+}
+.hero-mihi .mi-line{
+  font-family:"Playfair Display",serif;font-style:italic;font-weight:500;
+  font-size:clamp(1rem,2.1vw,1.32rem);color:var(--gold-soft);letter-spacing:.01em;
+}
+.hero-mihi .mi-trans{font-size:.86rem;color:var(--muted-dim);letter-spacing:.02em}
 .hero-sub{
   margin-top:18px;color:var(--muted);max-width:520px;font-size:1.02rem;
-  opacity:0;transform:translateY(20px);animation:hero-up 1s var(--ease) 1.2s forwards;
+  opacity:0;transform:translateY(20px);animation:hero-up 1s var(--ease) 1.28s forwards;
 }
 .hero-actions{
   margin-top:46px;display:flex;flex-wrap:wrap;gap:16px;
@@ -388,6 +420,43 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
 .style-card.feat{grid-column:span 2}
 @media (max-width:900px){ .style-card.feat{grid-column:span 2} }
 @media (max-width:620px){ .style-card.feat{grid-column:span 1} }
+
+/* ============================================================
+   STATS band
+   ============================================================ */
+.statband{
+  position:relative;padding:96px 0;overflow:hidden;
+  background:linear-gradient(180deg,var(--black),#0c1411 50%,var(--black));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.statband::before,.statband::after{content:"";position:absolute;width:480px;height:480px;
+  border-radius:50%;pointer-events:none;filter:blur(10px)}
+.statband::before{background:radial-gradient(circle,rgba(201,168,76,.12),transparent 70%);top:-260px;left:-120px}
+.statband::after{background:radial-gradient(circle,rgba(45,90,78,.16),transparent 70%);bottom:-260px;right:-120px}
+.statband-pat{position:absolute;inset:0;opacity:.06;pointer-events:none}
+.statband-pat svg{width:100%;height:100%}
+.statband-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media (max-width:780px){ .statband-grid{grid-template-columns:repeat(2,1fr);gap:40px 20px} }
+.sb-item{
+  text-align:center;padding:30px 16px;border-radius:18px;
+  border:1px solid transparent;
+  transition:border-color .5s var(--ease),background .5s var(--ease),transform .5s var(--ease);
+}
+.sb-item:hover{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.035);transform:translateY(-6px)}
+.sb-ic{width:46px;height:46px;margin:0 auto 18px;color:var(--gold);
+  transition:transform .6s var(--ease)}
+.sb-item:hover .sb-ic{transform:rotate(-8deg) scale(1.12)}
+.sb-ic svg{width:100%;height:100%}
+.sb-num{
+  font-family:"Playfair Display",serif;font-weight:800;line-height:1;
+  font-size:clamp(2.6rem,6.5vw,4.2rem);
+  background:linear-gradient(120deg,var(--gold-soft),var(--gold) 55%,var(--jade-soft));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:inline-flex;align-items:baseline}
+.sb-lbl{margin-top:14px;color:var(--muted);font-size:.92rem;letter-spacing:.06em;
+  text-transform:uppercase}
+.sb-sep{width:46px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:14px auto 0;opacity:.6}
 
 /* ============================================================
    GALERÍA — masonry
@@ -681,7 +750,11 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
       <span class="ink l" style="animation-delay:.85s">Ink Studio</span>
     </h1>
     <p class="hero-tag">«<span class="mi">Ko te tāmoko he kōrero o te kiri</span>» — el tā moko es la voz de la piel: cada línea, una historia que se lleva para siempre.</p>
-    <p class="hero-sub">Tane Wiremu — artista maorí de Aotearoa. Ta moko tradicional y Kirituhi contemporáneo, tatuados a mano con la herencia de cuatro generaciones.</p>
+    <p class="hero-mihi">
+      <span class="mi-line">Ko Tane Wiremu tōku ingoa, he tohunga tā moko.</span>
+      <span class="mi-trans">«Mi nombre es Tane Wiremu, soy maestro del tā moko.»</span>
+    </p>
+    <p class="hero-sub">Artista maorí de Aotearoa. Ta moko tradicional y Kirituhi contemporáneo, tatuados a mano con la herencia de cuatro generaciones.</p>
     <div class="hero-actions">
       <a href="#reservas" class="btn btn-primary" data-cursor>Reserva tu consulta
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -890,6 +963,47 @@ h1,h2,h3,h4{font-family:"Playfair Display",serif;font-weight:700;line-height:1.0
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== STATS ============== -->
+<section class="statband" id="stats" aria-label="Cifras del estudio">
+  <div class="statband-pat" aria-hidden="true">
+    <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="#c9a84c" stroke-width="2">
+        <path d="M-20 150 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+        <path d="M-20 220 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+        <path d="M-20 80 q160 -130 320 0 q160 130 320 0 q160 -130 320 0 q160 130 320 0"/>
+      </g>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="statband-grid reveal">
+      <div class="sb-item" data-cursor>
+        <div class="sb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sb-num"><span data-count="15" data-suffix="+">0</span></div>
+        <div class="sb-lbl">Años de experiencia</div>
+        <div class="sb-sep"></div>
+      </div>
+      <div class="sb-item" data-cursor>
+        <div class="sb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21l3-1L18 8a2.8 2.8 0 0 0-4-4L2 16l-1 5z" stroke-linejoin="round"/><path d="M14 6l4 4" stroke-linecap="round"/></svg></div>
+        <div class="sb-num"><span data-count="800" data-suffix="+">0</span></div>
+        <div class="sb-lbl">Tatuajes realizados</div>
+        <div class="sb-sep"></div>
+      </div>
+      <div class="sb-item" data-cursor>
+        <div class="sb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4h8v4a4 4 0 0 1-8 0z"/><path d="M8 5H5v2a3 3 0 0 0 3 3M16 5h3v2a3 3 0 0 1-3 3M10 14h4M9 20h6M12 14v6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="sb-num"><span data-count="12" data-suffix="">0</span></div>
+        <div class="sb-lbl">Premios &amp; reconocimientos</div>
+        <div class="sb-sep"></div>
+      </div>
+      <div class="sb-item" data-cursor>
+        <div class="sb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2.4 5 5.6.8-4 4 1 5.6L12 16l-5 2.4 1-5.6-4-4 5.6-.8z" stroke-linejoin="round"/></svg></div>
+        <div class="sb-num"><span data-count="100" data-suffix="%">0</span></div>
+        <div class="sb-lbl">Diseños personalizados</div>
+        <div class="sb-sep"></div>
+      </div>
     </div>
   </div>
 </section>
